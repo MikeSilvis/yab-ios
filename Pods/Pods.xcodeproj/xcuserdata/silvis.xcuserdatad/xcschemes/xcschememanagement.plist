@@ -4,7 +4,47 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ISO8601DateFormatterValueTransformer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RKValueTransformers.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RestKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SOCKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SSKeychain.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3E22D785A11D4E1E8F20B172</key>
+		<key>08E0DC17B0954A60804B1A09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F19C82659F0049499849D5B9</key>
+		<key>1316F90C53754E2F8CE06AF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>411BF755CA8843A7A5BA455C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>56C93DF4FD1B452F91AEDF63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6455CC4519274527AB1AD9EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78100FB7590E4534BD2C8A82</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>820038F8272E4160B20B60DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A008EDDC9AF40A4B0113C2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F2DC21C0965497C819104F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1A7E5F477A64F47BC6833B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

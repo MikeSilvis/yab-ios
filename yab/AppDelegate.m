@@ -7,15 +7,40 @@
 //
 
 #import "AppDelegate.h"
+#import "MappingProvider.h"
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self setupRestClient];
+
     return YES;
 }
-							
+- (void)setupRestClient {
+  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+  
+
+  AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:SERVER_URL]];
+
+  RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+  
+  RKResponseDescriptor *userShowDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider userStyleMapping]
+                                                                                          method:RKRequestMethodGET
+                                                                                     pathPattern:@"users/:id"
+                                                                                         keyPath:@"users"
+                                                                                     statusCodes:[NSIndexSet indexSetWithIndex:200]];
+  [objectManager addResponseDescriptor:userShowDescriptor];
+  
+  RKResponseDescriptor *userAuthenticationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider userStyleMapping]
+                                                                                          method:RKRequestMethodPOST
+                                                                                     pathPattern:@"authentication"
+                                                                                         keyPath:@"user"
+                                                                                     statusCodes:[NSIndexSet indexSetWithIndex:200]];
+  [objectManager addResponseDescriptor:userAuthenticationDescriptor];
+
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
   // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

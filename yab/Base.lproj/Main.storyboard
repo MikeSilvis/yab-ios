@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="653" y="498"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="RSx-UU-YS3">
             <objects>
-                <viewController id="nht-3s-tVo" sceneMemberID="viewController">
+                <viewController id="nht-3s-tVo" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D95-BI-hyZ"/>
                         <viewControllerLayoutGuide type="bottom" id="i7w-fC-ANn"/>

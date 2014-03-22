@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1157456818CBE95700298808 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1157456718CBE95700298808 /* User.m */; };
+		1157456E18CC00B900298808 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1157456D18CC00B900298808 /* MappingProvider.m */; };
 		117BE0A818CBDADA006950BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BE0A718CBDADA006950BB /* Foundation.framework */; };
 		117BE0AA18CBDADA006950BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BE0A918CBDADA006950BB /* CoreGraphics.framework */; };
 		117BE0AC18CBDADA006950BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BE0AB18CBDADA006950BB /* UIKit.framework */; };
@@ -22,6 +24,7 @@
 		117BE0CC18CBDADA006950BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BE0AB18CBDADA006950BB /* UIKit.framework */; };
 		117BE0D418CBDADA006950BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 117BE0D218CBDADA006950BB /* InfoPlist.strings */; };
 		117BE0D618CBDADA006950BB /* yabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BE0D518CBDADA006950BB /* yabTests.m */; };
+		11BE1D3918CBDEEA00F9D62E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */; };
 		99ABBF06BA7D41A7BBA6104D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C750AF8A9B64BF0A239336C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		036E00DF538642A6BDDA131B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		1157456618CBE95700298808 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		1157456718CBE95700298808 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		1157456C18CC00B900298808 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
+		1157456D18CC00B900298808 /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
 		117BE0A418CBDADA006950BB /* yab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BE0A718CBDADA006950BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		117BE0A918CBDADA006950BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +65,8 @@
 		117BE0D118CBDADA006950BB /* yabTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yabTests-Info.plist"; sourceTree = "<group>"; };
 		117BE0D318CBDADA006950BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		117BE0D518CBDADA006950BB /* yabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yabTests.m; sourceTree = "<group>"; };
+		11BE1D3718CBDEEA00F9D62E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3C750AF8A9B64BF0A239336C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +95,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1157456418CBE5DA00298808 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1157456C18CC00B900298808 /* MappingProvider.h */,
+				1157456D18CC00B900298808 /* MappingProvider.m */,
+				1157456618CBE95700298808 /* User.h */,
+				1157456718CBE95700298808 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1157456518CBE5E100298808 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		117BE09B18CBDADA006950BB = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +148,12 @@
 		117BE0AD18CBDADA006950BB /* yab */ = {
 			isa = PBXGroup;
 			children = (
+				1157456518CBE5E100298808 /* UI */,
+				1157456418CBE5DA00298808 /* Models */,
+				11BE1D3A18CBDEEF00F9D62E /* Controllers */,
 				117BE0B618CBDADA006950BB /* AppDelegate.h */,
 				117BE0B718CBDADA006950BB /* AppDelegate.m */,
 				117BE0B918CBDADA006950BB /* Main.storyboard */,
-				117BE0BC18CBDADA006950BB /* TownViewController.h */,
-				117BE0BD18CBDADA006950BB /* TownViewController.m */,
-				117BE0BF18CBDADA006950BB /* ProfileViewController.h */,
-				117BE0C018CBDADA006950BB /* ProfileViewController.m */,
 				117BE0C218CBDADA006950BB /* Images.xcassets */,
 				117BE0AE18CBDADA006950BB /* Supporting Files */,
 			);
@@ -161,6 +187,19 @@
 				117BE0D218CBDADA006950BB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11BE1D3A18CBDEEF00F9D62E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				117BE0BC18CBDADA006950BB /* TownViewController.h */,
+				117BE0BD18CBDADA006950BB /* TownViewController.m */,
+				11BE1D3718CBDEEA00F9D62E /* LoginViewController.h */,
+				11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */,
+				117BE0BF18CBDADA006950BB /* ProfileViewController.h */,
+				117BE0C018CBDADA006950BB /* ProfileViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +336,11 @@
 			files = (
 				117BE0C118CBDADA006950BB /* ProfileViewController.m in Sources */,
 				117BE0B818CBDADA006950BB /* AppDelegate.m in Sources */,
+				1157456818CBE95700298808 /* User.m in Sources */,
+				1157456E18CC00B900298808 /* MappingProvider.m in Sources */,
 				117BE0BE18CBDADA006950BB /* TownViewController.m in Sources */,
 				117BE0B418CBDADA006950BB /* main.m in Sources */,
+				11BE1D3918CBDEEA00F9D62E /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

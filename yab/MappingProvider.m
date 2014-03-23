@@ -16,7 +16,8 @@
   [mapping addAttributeMappingsFromDictionary:@{
     @"name"                 :   @"name",
     @"id"                   :   @"userId",
-    @"authentication_token" : @"authenticationToken"
+    @"phone_number"         :   @"phoneNumber",
+    @"authentication_token" :   @"authenticationToken"
   }];
   
   return mapping;

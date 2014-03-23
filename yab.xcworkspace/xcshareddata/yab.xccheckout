@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3568A0F4-F786-4BAA-A7E3-A343DA20EA48</string>
+	<key>IDESourceControlProjectName</key>
+	<string>yab</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FB72CC94-BD83-4CBD-94C3-F1FD6ED8B7A2</key>
+		<string>ssh://github.com/MikeSilvis/yab-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>yab.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FB72CC94-BD83-4CBD-94C3-F1FD6ED8B7A2</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/MikeSilvis/yab-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FB72CC94-BD83-4CBD-94C3-F1FD6ED8B7A2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FB72CC94-BD83-4CBD-94C3-F1FD6ED8B7A2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>yab-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

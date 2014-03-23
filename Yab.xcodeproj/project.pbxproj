@@ -25,6 +25,7 @@
 		117BE0D418CBDADA006950BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 117BE0D218CBDADA006950BB /* InfoPlist.strings */; };
 		117BE0D618CBDADA006950BB /* yabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BE0D518CBDADA006950BB /* yabTests.m */; };
 		11BE1D3918CBDEEA00F9D62E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */; };
+		11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */; };
 		99ABBF06BA7D41A7BBA6104D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C750AF8A9B64BF0A239336C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -44,14 +45,13 @@
 		1157456718CBE95700298808 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		1157456C18CC00B900298808 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		1157456D18CC00B900298808 /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
-		117BE0A418CBDADA006950BB /* yab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		117BE0A418CBDADA006950BB /* Yab.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yab.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BE0A718CBDADA006950BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		117BE0A918CBDADA006950BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		117BE0AB18CBDADA006950BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		117BE0AF18CBDADA006950BB /* yab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yab-Info.plist"; sourceTree = "<group>"; };
 		117BE0B118CBDADA006950BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		117BE0B318CBDADA006950BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		117BE0B518CBDADA006950BB /* yab-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yab-Prefix.pch"; sourceTree = "<group>"; };
 		117BE0B618CBDADA006950BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		117BE0B718CBDADA006950BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		117BE0BA18CBDADA006950BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,13 +60,15 @@
 		117BE0BF18CBDADA006950BB /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		117BE0C018CBDADA006950BB /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		117BE0C218CBDADA006950BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		117BE0C818CBDADA006950BB /* yabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		117BE0C818CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Yab.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BE0C918CBDADA006950BB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		117BE0D118CBDADA006950BB /* yabTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "yabTests-Info.plist"; sourceTree = "<group>"; };
+		117BE0D118CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yab.temp_caseinsensitive_renameTests-Info.plist"; sourceTree = "<group>"; };
 		117BE0D318CBDADA006950BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		117BE0D518CBDADA006950BB /* yabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yabTests.m; sourceTree = "<group>"; };
 		11BE1D3718CBDEEA00F9D62E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		11D2099B18DF6B6F00A30FD3 /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
+		11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		3C750AF8A9B64BF0A239336C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,7 +118,7 @@
 		117BE09B18CBDADA006950BB = {
 			isa = PBXGroup;
 			children = (
-				117BE0AD18CBDADA006950BB /* yab */,
+				117BE0AD18CBDADA006950BB /* Yab */,
 				117BE0CF18CBDADA006950BB /* yabTests */,
 				117BE0A618CBDADA006950BB /* Frameworks */,
 				117BE0A518CBDADA006950BB /* Products */,
@@ -127,8 +129,8 @@
 		117BE0A518CBDADA006950BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				117BE0A418CBDADA006950BB /* yab.app */,
-				117BE0C818CBDADA006950BB /* yabTests.xctest */,
+				117BE0A418CBDADA006950BB /* Yab.temp_caseinsensitive_rename.app */,
+				117BE0C818CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,7 +147,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		117BE0AD18CBDADA006950BB /* yab */ = {
+		117BE0AD18CBDADA006950BB /* Yab */ = {
 			isa = PBXGroup;
 			children = (
 				1157456518CBE5E100298808 /* UI */,
@@ -157,6 +159,7 @@
 				117BE0C218CBDADA006950BB /* Images.xcassets */,
 				117BE0AE18CBDADA006950BB /* Supporting Files */,
 			);
+			name = Yab;
 			path = yab;
 			sourceTree = "<group>";
 		};
@@ -166,7 +169,6 @@
 				117BE0AF18CBDADA006950BB /* yab-Info.plist */,
 				117BE0B018CBDADA006950BB /* InfoPlist.strings */,
 				117BE0B318CBDADA006950BB /* main.m */,
-				117BE0B518CBDADA006950BB /* yab-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -183,7 +185,7 @@
 		117BE0D018CBDADA006950BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				117BE0D118CBDADA006950BB /* yabTests-Info.plist */,
+				117BE0D118CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests-Info.plist */,
 				117BE0D218CBDADA006950BB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -192,6 +194,8 @@
 		11BE1D3A18CBDEEF00F9D62E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11D2099B18DF6B6F00A30FD3 /* ApplicationController.h */,
+				11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */,
 				117BE0BC18CBDADA006950BB /* TownViewController.h */,
 				117BE0BD18CBDADA006950BB /* TownViewController.m */,
 				11BE1D3718CBDEEA00F9D62E /* LoginViewController.h */,
@@ -205,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		117BE0A318CBDADA006950BB /* yab */ = {
+		117BE0A318CBDADA006950BB /* Yab.temp_caseinsensitive_rename */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 117BE0D918CBDADA006950BB /* Build configuration list for PBXNativeTarget "yab" */;
+			buildConfigurationList = 117BE0D918CBDADA006950BB /* Build configuration list for PBXNativeTarget "Yab.temp_caseinsensitive_rename" */;
 			buildPhases = (
 				1FB4CEA6368E4A6B90BEE3DE /* Check Pods Manifest.lock */,
 				117BE0A018CBDADA006950BB /* Sources */,
@@ -219,14 +223,14 @@
 			);
 			dependencies = (
 			);
-			name = yab;
+			name = Yab.temp_caseinsensitive_rename;
 			productName = yab;
-			productReference = 117BE0A418CBDADA006950BB /* yab.app */;
+			productReference = 117BE0A418CBDADA006950BB /* Yab.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
-		117BE0C718CBDADA006950BB /* yabTests */ = {
+		117BE0C718CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 117BE0DC18CBDADA006950BB /* Build configuration list for PBXNativeTarget "yabTests" */;
+			buildConfigurationList = 117BE0DC18CBDADA006950BB /* Build configuration list for PBXNativeTarget "Yab.temp_caseinsensitive_renameTests" */;
 			buildPhases = (
 				117BE0C418CBDADA006950BB /* Sources */,
 				117BE0C518CBDADA006950BB /* Frameworks */,
@@ -237,9 +241,9 @@
 			dependencies = (
 				117BE0CE18CBDADA006950BB /* PBXTargetDependency */,
 			);
-			name = yabTests;
+			name = Yab.temp_caseinsensitive_renameTests;
 			productName = yabTests;
-			productReference = 117BE0C818CBDADA006950BB /* yabTests.xctest */;
+			productReference = 117BE0C818CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +252,7 @@
 		117BE09C18CBDADA006950BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Mike Silvis";
 				TargetAttributes = {
 					117BE0C718CBDADA006950BB = {
@@ -256,7 +260,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 117BE09F18CBDADA006950BB /* Build configuration list for PBXProject "yab" */;
+			buildConfigurationList = 117BE09F18CBDADA006950BB /* Build configuration list for PBXProject "Yab" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -269,8 +273,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				117BE0A318CBDADA006950BB /* yab */,
-				117BE0C718CBDADA006950BB /* yabTests */,
+				117BE0A318CBDADA006950BB /* Yab.temp_caseinsensitive_rename */,
+				117BE0C718CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,6 +340,7 @@
 			files = (
 				117BE0C118CBDADA006950BB /* ProfileViewController.m in Sources */,
 				117BE0B818CBDADA006950BB /* AppDelegate.m in Sources */,
+				11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */,
 				1157456818CBE95700298808 /* User.m in Sources */,
 				1157456E18CC00B900298808 /* MappingProvider.m in Sources */,
 				117BE0BE18CBDADA006950BB /* TownViewController.m in Sources */,
@@ -357,7 +362,7 @@
 /* Begin PBXTargetDependency section */
 		117BE0CE18CBDADA006950BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 117BE0A318CBDADA006950BB /* yab */;
+			target = 117BE0A318CBDADA006950BB /* Yab.temp_caseinsensitive_rename */;
 			targetProxy = 117BE0CD18CBDADA006950BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -394,7 +399,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -433,7 +437,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -469,9 +472,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yab/yab-Prefix.pch";
-				INFOPLIST_FILE = "yab/yab-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = yab/Yab.pch;
+				INFOPLIST_FILE = "yab/Yab-Info.plist";
+				PRODUCT_NAME = Yab.temp_caseinsensitive_rename;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -483,9 +486,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "yab/yab-Prefix.pch";
-				INFOPLIST_FILE = "yab/yab-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = yab/Yab.pch;
+				INFOPLIST_FILE = "yab/Yab-Info.plist";
+				PRODUCT_NAME = Yab.temp_caseinsensitive_rename;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -493,7 +496,6 @@
 		117BE0DD18CBDADA006950BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yab.app/yab";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -506,8 +508,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "yabTests/yabTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "yabTests/Yab.temp_caseinsensitive_renameTests-Info.plist";
+				PRODUCT_NAME = Yab.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -516,7 +518,6 @@
 		117BE0DE18CBDADA006950BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yab.app/yab";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -525,8 +526,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yab/yab-Prefix.pch";
-				INFOPLIST_FILE = "yabTests/yabTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "yabTests/Yab.temp_caseinsensitive_renameTests-Info.plist";
+				PRODUCT_NAME = Yab.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -535,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		117BE09F18CBDADA006950BB /* Build configuration list for PBXProject "yab" */ = {
+		117BE09F18CBDADA006950BB /* Build configuration list for PBXProject "Yab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				117BE0D718CBDADA006950BB /* Debug */,
@@ -544,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		117BE0D918CBDADA006950BB /* Build configuration list for PBXNativeTarget "yab" */ = {
+		117BE0D918CBDADA006950BB /* Build configuration list for PBXNativeTarget "Yab.temp_caseinsensitive_rename" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				117BE0DA18CBDADA006950BB /* Debug */,
@@ -553,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		117BE0DC18CBDADA006950BB /* Build configuration list for PBXNativeTarget "yabTests" */ = {
+		117BE0DC18CBDADA006950BB /* Build configuration list for PBXNativeTarget "Yab.temp_caseinsensitive_renameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				117BE0DD18CBDADA006950BB /* Debug */,

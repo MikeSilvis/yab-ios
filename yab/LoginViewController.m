@@ -12,7 +12,9 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
+
   [self addFacebookButton];
+
 }
 
 - (void)addFacebookButton {
@@ -27,20 +29,21 @@
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
   
   if (self.isFirstLoginDone) {
-    NSString *fbAccessToken = [FBSession activeSession].accessTokenData.accessToken;
     
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    
-    id params = @{@"user": @{ @"facebook_auth_token":fbAccessToken } };
-    [objectManager postObject:params path:@"authentication" parameters:params
+    id params = @{@"user": @{ @"facebook_auth_token":[FBSession activeSession].accessTokenData.accessToken } };
+    [[RKObjectManager sharedManager] postObject:params path:@"authentication" parameters:params
                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                        User *user = [mappingResult firstObject];
-                        NSLog(@"%@", user.name);
+                        [[mappingResult firstObject] setCurrentUser];
+//                        [self dismissModalViewControllerAnimated:YES];
+                        [self dismissViewControllerAnimated:NO completion:nil];
                       }
                       failure:^(RKObjectRequestOperation *operation, NSError *error) {
                       }];
   }
 
+}
+- (void)goToProfile {
+  
 }
 
 @end

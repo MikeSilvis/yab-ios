@@ -7,49 +7,24 @@
 //
 
 #import "User.h"
-#import "SSKeychain.h"
-
-//#define SERVICE_NAME @"Yab-Facebook"
-//#define AUTH_TOKEN_KEY @"token"
 
 @implementation User
 
-//- (id)initWithFacebook:(FBGraphUser *)user {
++ (id)currentUser {
+  return [NSUserDefaults standardUserDefaults];
+}
++ (BOOL)isLoggedIn{
+  return !![User currentUser];
+}
+- (id)setCurrentUser {
+  
+  NSUserDefaults *session = [User currentUser];
+  
+  [session setObject:self.authenticationToken forKey:@"authenticationToken"];
+  
+  [session synchronize];
 
-//}
-//- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
-//  NSLog(@"%@", user);
-  //  self.profilePictureView.profileID = user.id;
-  //  self.nameLabel.text = user.name;
-//}
-//- (BOOL)isLoggedIn {
-//  return [self authToken] != nil;
-//}
-//
-//- (void)clearSavedCredentials {
-//  [self setAuthToken:nil];
-//}
-//
-//- (NSString *)authToken {
-//  return [self secureValueForKey:AUTH_TOKEN_KEY];
-//}
-//
-//- (void)setAuthToken:(NSString *)authToken {
-//  [self setSecureValue:authToken forKey:AUTH_TOKEN_KEY];
-//  [[NSNotificationCenter defaultCenter] postNotificationName:@"token-changed" object:self];
-//}
-//
-//- (void)setSecureValue:(NSString *)value forKey:(NSString *)key {
-//  if (value) {
-//    [SSKeychain setPassword:value
-//                 forService:SERVICE_NAME
-//                    account:key];
-//  } else {
-//    [SSKeychain deletePasswordForService:SERVICE_NAME account:key];
-//  }
-//}
-//
-//- (NSString *)secureValueForKey:(NSString *)key {
-//  return [SSKeychain passwordForService:SERVICE_NAME account:key];
-//}
+  return self;
+}
+
 @end

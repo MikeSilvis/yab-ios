@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
 #import <RestKit/RestKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
 #define SERVER_URL @"http://localhost:3000/api/v1/"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

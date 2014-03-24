@@ -10,21 +10,25 @@
 
 @implementation User
 
-+ (id)currentUser {
-  return [NSUserDefaults standardUserDefaults];
++ (User *)currentUser {
+  static User *currentUser = nil;
+  @synchronized(self) {
+    if (currentUser == nil)
+      currentUser = [[self alloc] init];
+  }
+  return currentUser;
 }
-+ (BOOL)isLoggedIn{
-  return !![User currentUser];
++ (BOOL)isLoggedIn {
+  return !![[User currentUser] authenticationToken];
 }
-- (id)setCurrentUser {
-  
-  NSUserDefaults *session = [User currentUser];
-  
-  [session setObject:self.authenticationToken forKey:@"authenticationToken"];
-  
-  [session synchronize];
 
-  return self;
+- (id)updateCurrentUser {
+  User *currentUser = [User currentUser];
+  currentUser.name = self.name;
+  currentUser.authenticationToken = self.authenticationToken;
+  currentUser.phoneNumber = self.phoneNumber;
+  
+  return currentUser;
 }
 
 @end

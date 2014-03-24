@@ -24,7 +24,7 @@
 //@property (nonatomic, copy) NSString *city;
 
 + (id)currentUser;
-- (id)setCurrentUser;
 + (BOOL)isLoggedIn;
+- (id)updateCurrentUser;
 
 @end

@@ -45,7 +45,7 @@
 		1157456718CBE95700298808 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		1157456C18CC00B900298808 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		1157456D18CC00B900298808 /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
-		117BE0A418CBDADA006950BB /* Yab.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yab.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		117BE0A418CBDADA006950BB /* Yab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BE0A718CBDADA006950BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		117BE0A918CBDADA006950BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		117BE0AB18CBDADA006950BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -60,7 +60,7 @@
 		117BE0BF18CBDADA006950BB /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		117BE0C018CBDADA006950BB /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		117BE0C218CBDADA006950BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		117BE0C818CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Yab.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		117BE0C818CBDADA006950BB /* YabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117BE0C918CBDADA006950BB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		117BE0D118CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yab.temp_caseinsensitive_renameTests-Info.plist"; sourceTree = "<group>"; };
 		117BE0D318CBDADA006950BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 		117BE0A518CBDADA006950BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				117BE0A418CBDADA006950BB /* Yab.temp_caseinsensitive_rename.app */,
-				117BE0C818CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests.xctest */,
+				117BE0A418CBDADA006950BB /* Yab.app */,
+				117BE0C818CBDADA006950BB /* YabTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 			);
 			name = Yab.temp_caseinsensitive_rename;
 			productName = yab;
-			productReference = 117BE0A418CBDADA006950BB /* Yab.temp_caseinsensitive_rename.app */;
+			productReference = 117BE0A418CBDADA006950BB /* Yab.app */;
 			productType = "com.apple.product-type.application";
 		};
 		117BE0C718CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests */ = {
@@ -243,7 +243,7 @@
 			);
 			name = Yab.temp_caseinsensitive_renameTests;
 			productName = yabTests;
-			productReference = 117BE0C818CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests.xctest */;
+			productReference = 117BE0C818CBDADA006950BB /* YabTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -474,7 +474,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = yab/Yab.pch;
 				INFOPLIST_FILE = "yab/Yab-Info.plist";
-				PRODUCT_NAME = Yab.temp_caseinsensitive_rename;
+				PRODUCT_NAME = Yab;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -488,7 +488,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = yab/Yab.pch;
 				INFOPLIST_FILE = "yab/Yab-Info.plist";
-				PRODUCT_NAME = Yab.temp_caseinsensitive_rename;
+				PRODUCT_NAME = Yab;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -508,8 +508,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "yabTests/Yab.temp_caseinsensitive_renameTests-Info.plist";
-				PRODUCT_NAME = Yab.temp_caseinsensitive_renameTests;
+				INFOPLIST_FILE = "yabTests/Yab-Info.plist";
+				PRODUCT_NAME = YabTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -526,8 +526,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "yab/yab-Prefix.pch";
-				INFOPLIST_FILE = "yabTests/Yab.temp_caseinsensitive_renameTests-Info.plist";
-				PRODUCT_NAME = Yab.temp_caseinsensitive_renameTests;
+				INFOPLIST_FILE = "yabTests/Yab-Info.plist";
+				PRODUCT_NAME = YabTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

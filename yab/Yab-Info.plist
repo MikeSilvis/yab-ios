@@ -47,6 +47,10 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb417175008425995</string>
+			</array>
 			<key>CFBundleURLName</key>
 			<string>fbyab.yab</string>
 		</dict>

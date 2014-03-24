@@ -12,9 +12,17 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
-
+  [super viewDidLoad];
   [self addFacebookButton];
+}
 
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:YES];
+  [self loadStyles];
+}
+
+- (void)loadStyles {
+  self.view.backgroundColor = BLUECOLOR;
 }
 
 - (void)addFacebookButton {

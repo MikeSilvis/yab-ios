@@ -17,13 +17,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    [self loadStyles];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)loadStyles {
+  self.navigationController.topViewController.title = self.user.name;
+}
+- (User *)user {
+  if (!!_user) {
+    return _user;
+  } else {
+    return [User currentUser];
+  }
 }
 
 @end

@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self performSegueWithIdentifier:@"townPage" sender:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

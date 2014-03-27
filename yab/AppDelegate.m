@@ -12,9 +12,8 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    [self setupRestClient];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [MappingProvider setUpClient];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
@@ -27,26 +26,7 @@
   return wasHandled;
 }
 - (void)setupRestClient {
-  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-  
 
-  AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:SERVER_URL]];
-
-  RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-  
-  RKResponseDescriptor *userShowDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider userStyleMapping]
-                                                                                          method:RKRequestMethodGET
-                                                                                     pathPattern:@"users/:id"
-                                                                                         keyPath:@"users"
-                                                                                     statusCodes:[NSIndexSet indexSetWithIndex:200]];
-  [objectManager addResponseDescriptor:userShowDescriptor];
-  
-  RKResponseDescriptor *userAuthenticationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider userStyleMapping]
-                                                                                          method:RKRequestMethodPOST
-                                                                                     pathPattern:@"authentication"
-                                                                                         keyPath:@"user"
-                                                                                     statusCodes:[NSIndexSet indexSetWithIndex:200]];
-  [objectManager addResponseDescriptor:userAuthenticationDescriptor];
 
 }
 - (void)applicationWillResignActive:(UIApplication *)application

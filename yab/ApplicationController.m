@@ -14,29 +14,26 @@
 @implementation ApplicationController
 
 - (void)viewDidAppear:(BOOL)animated {
-  [super viewDidLoad];
-  
+  [super viewDidAppear:NO];
+  [[[RKObjectManager sharedManager] HTTPClient] setAuthorizationHeaderWithToken:@"hello"];
+
   if (![User isLoggedIn]) {
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
   }
   
 }
 - (void)viewDidLoad {
-  [super viewDidAppear:YES];
+  [super viewDidLoad];
   [self loadStyles];
 }
 - (void)loadStyles {
+  [[UIBarButtonItem appearance] setTintColor:WHITECOLOR];
   [[UITabBar appearance] setTintColor:GREENCOLOR];
   [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                      NSForegroundColorAttributeName: WHITECOLOR
+                                                      NSForegroundColorAttributeName: WHITECOLOR,
+                                                      NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:10.0f]
                                                       }
                                            forState:UIControlStateNormal];
-  
-  self.navigationController.navigationBar.tintColor = BLACKCOLOR;
-  self.navigationController.navigationBar.titleTextAttributes = @{
-                                 NSForegroundColorAttributeName: WHITECOLOR
-                                 };
-
 }
 
 @end

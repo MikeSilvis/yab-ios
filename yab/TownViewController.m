@@ -7,6 +7,8 @@
 //
 
 #import "TownViewController.h"
+#import "User.h"
+#import "AppDelegate.h"
 
 @interface TownViewController ()
 
@@ -16,13 +18,16 @@
 
 - (void)viewDidLoad
 {
+    self.navigationController.topViewController.title = @"Town";
+    [self loadStyles];
     [super viewDidLoad];
-    [self performSegueWithIdentifier:@"townPage" sender:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:YES];
-  [self loadStyles];
+  if ([User isLoggedIn]) {
+    [self loadBars];
+  }
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,7 +35,30 @@
     [super didReceiveMemoryWarning];
 }
 - (void)loadStyles {
-    self.navigationController.topViewController.title = @"Penn State";
+  self.navigationController.navigationBar.barTintColor = BLACKCOLOR;
+  self.navigationController.navigationBar.translucent = NO;
+  self.navigationController.navigationBar.titleTextAttributes = @{
+                                                                  NSForegroundColorAttributeName: WHITECOLOR
+                                                                  };
+}
+- (void)loadBars {
+  [[RKObjectManager sharedManager] getObjectsAtPath:@"venues"
+                       parameters:nil
+                          success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                            NSArray* bars = [mappingResult array];
+                            NSLog(@"%@", bars);
+//                            _statuses = statuses;
+//                            if(self.isViewLoaded)
+//                              [_tableView reloadData];
+                          }
+                          failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                                            message:[error localizedDescription]
+//                                                                           delegate:nil
+//                                                                  cancelButtonTitle:@"OK"
+//                                                                  otherButtonTitles:nil];
+//                            [alert show];
+                          }];
 }
 
 @end

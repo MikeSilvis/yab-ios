@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FontAwesomeKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ISO8601DateFormatterValueTransformer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2BDA873457FD4B78A5339561</key>
+		<key>07A8BD67B5E54820A423FA15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4CCA5A1B4E2D446B9F419303</key>
+		<key>0D8148C22CF74298A81F4E05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68A9CE9D2C3A4317A07BE853</key>
+		<key>5443CE8D88224A52ABCACBF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A4EFC4E767E4EC586EB39D8</key>
+		<key>5D85B052287D4B8181220680</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81121956D863418C93A8BA21</key>
+		<key>825EA6B833334F8F8FCF3D55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BA569AC61964BC1AAB873EA</key>
+		<key>8A3B622D24504C9A9CB02BCE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>917B98EEB2BB43C2B457D543</key>
+		<key>A8A9555FAC874154BEAE880A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF30716B2D024D6FA5A99E00</key>
+		<key>ED3EA50366FA43F99D53CD10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EE96B986E76C4D38B5A59C04</key>
+		<key>F023ACB2B494487E80C0C5D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F509DB3B50864FBC8E6584F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

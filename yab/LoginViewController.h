@@ -14,6 +14,5 @@
 
 @interface LoginViewController : UIViewController <FBLoginViewDelegate>
 
-@property (nonatomic, assign) BOOL isFirstLoginDone;
 
 @end

@@ -22,4 +22,46 @@
   
   return mapping;
 }
++ (RKMapping *)venueStyleMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Venue class]];
+  
+  [mapping addAttributeMappingsFromDictionary:@{
+                                                @"name"                 :   @"name",
+                                                @"id"                   :   @"venueId",
+                                                }];
+  
+  return mapping;
+}
+
++ (void)setUpClient {
+  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+//      [[[RKObjectManager sharedManager] HTTPClient] setAuthorizationHeaderWithToken:@"hello"];
+  
+  
+  AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:SERVER_URL]];
+  
+  RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+  
+  RKResponseDescriptor *userShowDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider userStyleMapping]
+                                                                                          method:RKRequestMethodGET
+                                                                                     pathPattern:@"users/:id"
+                                                                                         keyPath:@"users"
+                                                                                     statusCodes:[NSIndexSet indexSetWithIndex:200]];
+  [objectManager addResponseDescriptor:userShowDescriptor];
+  
+  RKResponseDescriptor *userAuthenticationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider userStyleMapping]
+                                                                                                    method:RKRequestMethodPOST
+                                                                                               pathPattern:@"authentication"
+                                                                                                   keyPath:@"user"
+                                                                                               statusCodes:[NSIndexSet indexSetWithIndex:200]];
+  [objectManager addResponseDescriptor:userAuthenticationDescriptor];
+
+  RKResponseDescriptor *veneuIndexDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider venueStyleMapping]
+                                                                                                    method:RKRequestMethodGET
+                                                                                               pathPattern:@"venues"
+                                                                                                   keyPath:@"venues"
+                                                                                               statusCodes:[NSIndexSet indexSetWithIndex:200]];
+  [objectManager addResponseDescriptor:veneuIndexDescriptor];
+}
+
 @end

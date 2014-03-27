@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "AppDelegate.h"
 
 @interface ProfileViewController ()
 
@@ -14,13 +15,14 @@
 
 @implementation ProfileViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+
+     self.navigationController.topViewController.title = @"Me";
+    [self loadStyles];
     [super viewDidLoad];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    [self loadStyles];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,9 +30,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)loadStyles {
-  self.navigationController.topViewController.title = self.user.name;
-}
 - (User *)user {
   if (!!_user) {
     return _user;
@@ -38,5 +37,23 @@
     return [User currentUser];
   }
 }
+- (void)loadStyles {
+  FAKFontAwesome *cogIcon = [FAKFontAwesome cogIconWithSize:2];
+  [cogIcon addAttribute:NSForegroundColorAttributeName value:WHITECOLOR];
+  cogIcon.iconFontSize = 20;
+  self.settingsGear.image = [cogIcon imageWithSize:CGSizeMake(30, 30)];
 
+  
+  // Navigation
+  [self preferredStatusBarStyle];
+  self.navigationController.navigationBar.barTintColor = BLACKCOLOR;
+  self.navigationController.navigationBar.translucent = NO;
+  self.navigationController.navigationBar.titleTextAttributes = @{
+                                                                  NSForegroundColorAttributeName: WHITECOLOR
+                                                                  };
+}
+
+- (IBAction)settingsGearTouched:(id)sender {
+  [self performSegueWithIdentifier:@"settingsModal" sender:self];
+}
 @end

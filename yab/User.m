@@ -30,5 +30,11 @@
   
   return currentUser;
 }
+- (id)logOut {
+  User *currentUser = [User currentUser];
+  currentUser.authenticationToken = nil;
+
+  return currentUser;
+}
 
 @end

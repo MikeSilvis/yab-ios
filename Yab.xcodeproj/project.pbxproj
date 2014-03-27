@@ -25,6 +25,8 @@
 		117BE0CC18CBDADA006950BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BE0AB18CBDADA006950BB /* UIKit.framework */; };
 		117BE0D418CBDADA006950BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 117BE0D218CBDADA006950BB /* InfoPlist.strings */; };
 		117BE0D618CBDADA006950BB /* yabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 117BE0D518CBDADA006950BB /* yabTests.m */; };
+		119151A918E142B3006F69E4 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119151A818E142B3006F69E4 /* SettingsController.m */; };
+		119151AF18E286E7006F69E4 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 119151AE18E286E7006F69E4 /* Venue.m */; };
 		11BE1D3918CBDEEA00F9D62E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */; };
 		11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */; };
 		99ABBF06BA7D41A7BBA6104D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C750AF8A9B64BF0A239336C /* libPods.a */; };
@@ -68,6 +70,10 @@
 		117BE0D118CBDADA006950BB /* Yab.temp_caseinsensitive_renameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yab.temp_caseinsensitive_renameTests-Info.plist"; sourceTree = "<group>"; };
 		117BE0D318CBDADA006950BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		117BE0D518CBDADA006950BB /* yabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yabTests.m; sourceTree = "<group>"; };
+		119151A718E142B3006F69E4 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
+		119151A818E142B3006F69E4 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		119151AD18E286E7006F69E4 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		119151AE18E286E7006F69E4 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		11BE1D3718CBDEEA00F9D62E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		11D2099B18DF6B6F00A30FD3 /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 				1157456D18CC00B900298808 /* MappingProvider.m */,
 				1157456618CBE95700298808 /* User.h */,
 				1157456718CBE95700298808 /* User.m */,
+				119151AD18E286E7006F69E4 /* Venue.h */,
+				119151AE18E286E7006F69E4 /* Venue.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -207,6 +215,8 @@
 				117BE0C018CBDADA006950BB /* ProfileViewController.m */,
 				11BE1D3718CBDEEA00F9D62E /* LoginViewController.h */,
 				11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */,
+				119151A718E142B3006F69E4 /* SettingsController.h */,
+				119151A818E142B3006F69E4 /* SettingsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -343,8 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119151AF18E286E7006F69E4 /* Venue.m in Sources */,
 				117BE0C118CBDADA006950BB /* ProfileViewController.m in Sources */,
 				117BE0B818CBDADA006950BB /* AppDelegate.m in Sources */,
+				119151A918E142B3006F69E4 /* SettingsController.m in Sources */,
 				11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */,
 				1157456818CBE95700298808 /* User.m in Sources */,
 				1157456E18CC00B900298808 /* MappingProvider.m in Sources */,

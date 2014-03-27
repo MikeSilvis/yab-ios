@@ -17,14 +17,15 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:YES];
+  [super viewDidAppear:NO];
   [self loadStyles];
 }
 
 - (void)loadStyles {
-  self.view.backgroundColor = BLUECOLOR;
 }
-
+-(UIStatusBarStyle)preferredStatusBarStyle{
+  return UIStatusBarStyleLightContent;
+}
 - (void)addFacebookButton {
   FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"basic_info", @"email"]];
   loginView.delegate = self;
@@ -33,23 +34,14 @@
 }
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-  self.isFirstLoginDone = YES;
-}
-
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
-  
-  if (self.isFirstLoginDone) {
-    
-    id params = @{@"user": @{ @"facebook_auth_token":[FBSession activeSession].accessTokenData.accessToken } };
-    [[RKObjectManager sharedManager] postObject:params path:@"authentication" parameters:params
-                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                        [[mappingResult firstObject] updateCurrentUser];
-                        [self dismissViewControllerAnimated:NO completion:nil];
-                      }
-                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                      }];
-  }
-
+  id params = @{@"user": @{ @"facebook_auth_token":[FBSession activeSession].accessTokenData.accessToken } };
+  [[RKObjectManager sharedManager] postObject:params path:@"authentication" parameters:params
+                                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                        [[mappingResult firstObject] updateCurrentUser];
+                                        [self dismissViewControllerAnimated:NO completion:nil];
+                                      }
+                                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                      }];
 }
 
 @end

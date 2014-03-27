@@ -10,4 +10,7 @@
 
 @interface TownViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UITableView *barTable;
+
 @end

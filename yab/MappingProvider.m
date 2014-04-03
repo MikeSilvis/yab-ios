@@ -22,12 +22,23 @@
   
   return mapping;
 }
-+ (RKMapping *)venueStyleMapping {
-  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Venue class]];
++ (RKMapping *)merchantStyleMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Merchant class]];
   
   [mapping addAttributeMappingsFromDictionary:@{
                                                 @"name"                 :   @"name",
-                                                @"id"                   :   @"venueId",
+                                                @"id"                   :   @"merchantId",
+                                                }];
+  
+  return mapping;
+}
++ (RKMapping *)locationStyleMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Location class]];
+  
+  [mapping addAttributeMappingsFromDictionary:@{
+                                                @"id"                   :   @"locationtId",
+                                                @"latitude"             :   @"latitude",
+                                                @"longitude"            :   @"longitude",
                                                 }];
   
   return mapping;
@@ -56,12 +67,19 @@
                                                                                                statusCodes:[NSIndexSet indexSetWithIndex:200]];
   [objectManager addResponseDescriptor:userAuthenticationDescriptor];
 
-  RKResponseDescriptor *veneuIndexDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider venueStyleMapping]
+  RKResponseDescriptor *merchantIndexDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider merchantStyleMapping]
                                                                                                     method:RKRequestMethodGET
-                                                                                               pathPattern:@"venues"
-                                                                                                   keyPath:@"venues"
+                                                                                               pathPattern:@"merchant"
+                                                                                                   keyPath:@"merchant"
                                                                                                statusCodes:[NSIndexSet indexSetWithIndex:200]];
-  [objectManager addResponseDescriptor:veneuIndexDescriptor];
+  [objectManager addResponseDescriptor:merchantIndexDescriptor];
+  
+  RKResponseDescriptor *locationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider locationStyleMapping]
+                                                                                                    method:RKRequestMethodPOST
+                                                                                               pathPattern:@"locations"
+                                                                                                   keyPath:@"location"
+                                                                                               statusCodes:[NSIndexSet indexSetWithIndex:200]];
+  [objectManager addResponseDescriptor:locationDescriptor];
 }
 
 @end

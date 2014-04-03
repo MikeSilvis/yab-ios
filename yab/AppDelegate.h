@@ -10,8 +10,8 @@
 #import <RestKit/RestKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-#define SERVER_URL @"http://localhost:3000/api/v1"
-//#define SERVER_URL @"http://staging.getyab.com/api/v1/"
+//#define SERVER_URL @"http://localhost:3000/api/v1"
+#define SERVER_URL @"http://getyab.com/api/v1/"
 
 // Colors
 #define GREENCOLOR [UIColor colorWithRed:0.0 green:200.0/255.0f blue:170.0/255.0f alpha:1.0]

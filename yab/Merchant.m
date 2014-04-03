@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Mike Silvis. All rights reserved.
 //
 
-#import "Venue.h"
+#import "Merchant.h"
 
-@implementation Venue
+@implementation Merchant
 
 @end

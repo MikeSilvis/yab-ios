@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Venue : NSObject
+@interface Merchant : NSObject
 
-@property (nonatomic, copy) NSString *venueId;
+@property (nonatomic, copy) NSString *merchantId;
 @property (nonatomic, copy) NSString *name;
 
 @end

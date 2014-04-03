@@ -16,18 +16,21 @@
 
 @implementation TownViewController
 
-- (void)viewDidLoad
-{
-    self.navigationController.topViewController.title = @"Town";
-    [self loadStyles];
-    [super viewDidLoad];
+- (void)viewDidLoad {
+  
+  [super viewDidLoad];
+  self.navigationController.topViewController.title = @"Town";
+  [self loadStyles];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:YES];
+  
   if ([User isLoggedIn]) {
     [self loadBars];
   }
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,11 +45,13 @@
                                                                   };
 }
 - (void)loadBars {
-  [[RKObjectManager sharedManager] getObjectsAtPath:@"venues"
-                       parameters:nil
+  [[RKObjectManager sharedManager] getObjectsAtPath:@"merchant"
+                                         parameters:@{
+                                                      @"authentication_token": [[User currentUser] authenticationToken]
+                                                      }
                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                            NSArray* bars = [mappingResult array];
-                            NSLog(@"%@", bars);
+//                            NSArray* bars = [mappingResult array];
+//                            NSLog(@"%@", bars);
 //                            _statuses = statuses;
 //                            if(self.isViewLoaded)
 //                              [_tableView reloadData];

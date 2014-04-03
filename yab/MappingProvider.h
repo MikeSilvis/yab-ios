@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
 #import "User.h"
-#import "Venue.h"
+#import "Merchant.h"
+#import "Location.h"
 
 @interface MappingProvider : NSObject
 
 + (RKMapping *)userStyleMapping;
-+ (RKMapping *)venueStyleMapping;
++ (RKMapping *)merchantStyleMapping;
++ (RKMapping *)locationStyleMapping;
+
 + (void)setUpClient;
 
 @end

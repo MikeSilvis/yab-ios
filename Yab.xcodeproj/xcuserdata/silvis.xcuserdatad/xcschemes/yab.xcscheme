@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "117BE0A318CBDADA006950BB"
                BuildableName = "Yab.app"
-               BlueprintName = "Yab.temp_caseinsensitive_rename"
+               BlueprintName = "Yab"
                ReferencedContainer = "container:Yab.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "117BE0C718CBDADA006950BB"
                BuildableName = "YabTests.xctest"
-               BlueprintName = "Yab.temp_caseinsensitive_renameTests"
+               BlueprintName = "YabTest"
                ReferencedContainer = "container:Yab.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "117BE0A318CBDADA006950BB"
             BuildableName = "Yab.app"
-            BlueprintName = "Yab.temp_caseinsensitive_rename"
+            BlueprintName = "Yab"
             ReferencedContainer = "container:Yab.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "117BE0A318CBDADA006950BB"
             BuildableName = "Yab.app"
-            BlueprintName = "Yab.temp_caseinsensitive_rename"
+            BlueprintName = "Yab"
             ReferencedContainer = "container:Yab.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "117BE0A318CBDADA006950BB"
             BuildableName = "Yab.app"
-            BlueprintName = "Yab.temp_caseinsensitive_rename"
+            BlueprintName = "Yab"
             ReferencedContainer = "container:Yab.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

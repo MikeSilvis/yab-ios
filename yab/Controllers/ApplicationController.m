@@ -15,9 +15,13 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:NO];
-
+  
   if (![User isLoggedIn]) {
-    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    if ([User hasLoggedIn]) {
+      [self performSegueWithIdentifier:@"loadingSegue" sender:self];
+    } else {
+      [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    }
   }
   
 }

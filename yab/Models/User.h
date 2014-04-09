@@ -25,6 +25,7 @@
 
 + (id)currentUser;
 + (BOOL)isLoggedIn;
++ (BOOL)hasLoggedIn;
 - (id)updateCurrentUser;
 - (id)logOut;
 

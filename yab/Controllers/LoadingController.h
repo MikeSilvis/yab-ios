@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+#import "MappingProvider.h"
 
 @interface LoadingController : UIViewController
 

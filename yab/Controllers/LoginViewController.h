@@ -14,7 +14,5 @@
 
 @interface LoginViewController : UIViewController <FBLoginViewDelegate>
 
-//@property (weak, nonatomic) IBOutlet UIImageView *loginBackgroundImage;
-
 
 @end

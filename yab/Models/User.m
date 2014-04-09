@@ -18,26 +18,53 @@
   }
   return currentUser;
 }
+
 + (BOOL)isLoggedIn {
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  return [defaults objectForKey:@"authToken"];
+  return !![[User currentUser] name];
+}
+
++ (BOOL)hasLoggedIn {
+  return [[NSUserDefaults standardUserDefaults] objectForKey:@"authenticationToken"];
 }
 
 - (id)updateCurrentUser {
   User *currentUser = [User currentUser];
   currentUser.name = self.name;
+  currentUser.userId = self.userId;
   currentUser.authenticationToken = self.authenticationToken;
   currentUser.phoneNumber = self.phoneNumber;
-  
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setObject:currentUser.authenticationToken forKey:@"authToken"];
-  [defaults synchronize];
+  [currentUser syncUserDefaults];
   
   return currentUser;
 }
+
+- (void)syncUserDefaults {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setObject: _authenticationToken forKey:@"authenticationToken"];
+  [defaults setObject: _userId forKey:@"userId"];
+  [defaults synchronize];
+}
+
+- (NSString *)userId {
+  if (_userId) {
+    return _userId;
+  } else {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
+  }
+}
+
+- (NSString *)authenticationToken {
+  if (_authenticationToken) {
+    return _authenticationToken;
+  } else {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"authenticationToken"];
+  }
+}
+
 - (id)logOut {
   User *currentUser = [User currentUser];
   currentUser.authenticationToken = nil;
+  [currentUser syncUserDefaults];
 
   return currentUser;
 }

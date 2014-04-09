@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-1573" y="1365"/>
         </scene>
-        <!--View Controller-->
+        <!--Loading Controller-->
         <scene sceneID="VGt-NG-gY3">
             <objects>
-                <viewController id="aL4-UJ-00N" sceneMemberID="viewController">
+                <viewController id="aL4-UJ-00N" customClass="LoadingController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UgB-cG-tk1"/>
                         <viewControllerLayoutGuide type="bottom" id="kNQ-Yb-pYT"/>
@@ -182,7 +182,7 @@
                         <segue destination="Lxn-9K-ANz" kind="relationship" relationship="viewControllers" id="ldc-kG-BmX"/>
                         <segue destination="E8P-1Q-2NC" kind="relationship" relationship="viewControllers" id="X6Q-FQ-plt"/>
                         <segue destination="nht-3s-tVo" kind="modal" identifier="loginSegue" animates="NO" id="6mv-N3-dcE"/>
-                        <segue destination="aL4-UJ-00N" kind="modal" id="voq-iN-xgt"/>
+                        <segue destination="aL4-UJ-00N" kind="modal" identifier="loadingSegue" animates="NO" id="voq-iN-xgt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6eg-bn-PJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>

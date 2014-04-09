@@ -121,7 +121,7 @@
 				11954BF318E51AFE00D81D03 /* Location.h */,
 				11954BF418E51AFE00D81D03 /* Location.m */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1157456518CBE5E100298808 /* UI */ = {
@@ -130,7 +130,7 @@
 				1121957518DFD38F00D7887E /* UINavigationBar+Yab.h */,
 				1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */,
 			);
-			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		117BE09B18CBDADA006950BB = {
@@ -223,7 +223,7 @@
 				119151A718E142B3006F69E4 /* SettingsController.h */,
 				119151A818E142B3006F69E4 /* SettingsController.m */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

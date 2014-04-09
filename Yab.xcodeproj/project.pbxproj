@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1121957718DFD38F00D7887E /* UINavigationBar+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */; };
+		113CD88918F4E504000779FC /* LoadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113CD88818F4E504000779FC /* LoadingController.m */; };
 		1157456818CBE95700298808 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1157456718CBE95700298808 /* User.m */; };
 		1157456E18CC00B900298808 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1157456D18CC00B900298808 /* MappingProvider.m */; };
 		117BE0A818CBDADA006950BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BE0A718CBDADA006950BB /* Foundation.framework */; };
@@ -47,6 +48,8 @@
 		036E00DF538642A6BDDA131B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1121957518DFD38F00D7887E /* UINavigationBar+Yab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Yab.h"; sourceTree = "<group>"; };
 		1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Yab.m"; sourceTree = "<group>"; };
+		113CD88718F4E504000779FC /* LoadingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingController.h; sourceTree = "<group>"; };
+		113CD88818F4E504000779FC /* LoadingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingController.m; sourceTree = "<group>"; };
 		1157456618CBE95700298808 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		1157456718CBE95700298808 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		1157456C18CC00B900298808 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */,
 				119151A718E142B3006F69E4 /* SettingsController.h */,
 				119151A818E142B3006F69E4 /* SettingsController.m */,
+				113CD88718F4E504000779FC /* LoadingController.h */,
+				113CD88818F4E504000779FC /* LoadingController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				119151A918E142B3006F69E4 /* SettingsController.m in Sources */,
 				11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */,
 				1157456818CBE95700298808 /* User.m in Sources */,
+				113CD88918F4E504000779FC /* LoadingController.m in Sources */,
 				1157456E18CC00B900298808 /* MappingProvider.m in Sources */,
 				117BE0BE18CBDADA006950BB /* TownViewController.m in Sources */,
 				1121957718DFD38F00D7887E /* UINavigationBar+Yab.m in Sources */,

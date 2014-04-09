@@ -19,7 +19,8 @@
   return currentUser;
 }
 + (BOOL)isLoggedIn {
-  return !![[User currentUser] authenticationToken];
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  return [defaults objectForKey:@"authToken"];
 }
 
 - (id)updateCurrentUser {
@@ -27,6 +28,10 @@
   currentUser.name = self.name;
   currentUser.authenticationToken = self.authenticationToken;
   currentUser.phoneNumber = self.phoneNumber;
+  
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setObject:currentUser.authenticationToken forKey:@"authToken"];
+  [defaults synchronize];
   
   return currentUser;
 }

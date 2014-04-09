@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
 
-@interface ApplicationController : UITabBarController <CLLocationManagerDelegate, MKMapViewDelegate>
-
-@property (nonatomic) CLLocationManager *locationManager;
+@interface ApplicationController : UITabBarController
 
 @end

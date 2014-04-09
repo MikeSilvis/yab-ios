@@ -22,7 +22,9 @@
 }
 
 - (void)loadStyles {
+//  self.loginBackgroundImage = [UIImage imageNamed:@"loginBg.png"];
 }
+
 -(UIStatusBarStyle)preferredStatusBarStyle{
   return UIStatusBarStyleLightContent;
 }

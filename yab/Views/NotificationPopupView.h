@@ -11,8 +11,6 @@
 #import "ApplicationController.h"
 
 @interface NotificationPopupView : UIView
-//@property (nonatomic, copy) NSString *authenticationToken;
 
-//@property (nonatomic, copy) ApplicationController *parentController;
 
 @end

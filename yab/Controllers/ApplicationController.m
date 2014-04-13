@@ -17,15 +17,13 @@
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:NO];
   
-  if (![User isLoggedIn]) {
-    if ([User hasLoggedIn]) {
+  if ([User hasLoggedIn]) {
+    [self setupBeaon];
+    if (![User isLoggedIn]) {
       [User findCurrent];
-      [self setupBeaon];
-    } else {
-      [self performSegueWithIdentifier:@"loginSegue" sender:self];
     }
   } else {
-    [self setupBeaon];
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
   }
   
 }
@@ -122,18 +120,14 @@
   switch (proximity) {
     case CLProximityUnknown:
       self.view.backgroundColor = [UIColor whiteColor];
-      NSLog(@"unkown");
       break;
     case CLProximityFar:
       self.view.backgroundColor = [UIColor yellowColor];
-      NSLog(@"unkown");
       break;
     case CLProximityNear:
-      NSLog(@"unkown");
       self.view.backgroundColor = [UIColor orangeColor];
       break;
     case CLProximityImmediate:
-      NSLog(@"unkown");
       self.view.backgroundColor = [UIColor redColor];
       break;
     default:

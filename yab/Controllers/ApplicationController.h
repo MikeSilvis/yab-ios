@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
 
-@interface ApplicationController : UITabBarController <CLLocationManagerDelegate, MKMapViewDelegate>
+#define BEACON_UUID @"259B43F9-F6B7-498D-9448-BCF5EAAF1C85"
+#define IDENTIFIER @"Yab.Yab"
 
-@property (nonatomic) CLLocationManager *locationManager;
+@interface ApplicationController : UITabBarController  <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end

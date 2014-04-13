@@ -23,6 +23,7 @@
 
 - (void)loadStyles {
 }
+
 -(UIStatusBarStyle)preferredStatusBarStyle{
   return UIStatusBarStyleLightContent;
 }

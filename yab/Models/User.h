@@ -25,6 +25,8 @@
 
 + (id)currentUser;
 + (BOOL)isLoggedIn;
++ (BOOL)hasLoggedIn;
++ (void)findCurrent;
 - (id)updateCurrentUser;
 - (id)logOut;
 

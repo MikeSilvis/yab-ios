@@ -46,8 +46,6 @@
 
 + (void)setUpClient {
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-//      [[[RKObjectManager sharedManager] HTTPClient] setAuthorizationHeaderWithToken:@"hello"];
-  
   
   AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:SERVER_URL]];
   
@@ -56,7 +54,7 @@
   RKResponseDescriptor *userShowDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider userStyleMapping]
                                                                                           method:RKRequestMethodGET
                                                                                      pathPattern:@"users/:id"
-                                                                                         keyPath:@"users"
+                                                                                         keyPath:@"user"
                                                                                      statusCodes:[NSIndexSet indexSetWithIndex:200]];
   [objectManager addResponseDescriptor:userShowDescriptor];
   

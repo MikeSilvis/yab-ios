@@ -17,14 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GJg-PN-z5a">
-                                <rect key="frame" x="0.0" y="148" width="320" height="307"/>
+                                <rect key="frame" x="0.0" y="-10" width="320" height="465"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Akq-P0-gTD">
-                                <rect key="frame" x="0.0" y="148" width="320" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -90,6 +86,34 @@
             </objects>
             <point key="canvasLocation" x="-1573" y="1365"/>
         </scene>
+        <!--Loading Controller-->
+        <scene sceneID="VGt-NG-gY3">
+            <objects>
+                <viewController id="aL4-UJ-00N" customClass="LoadingController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UgB-cG-tk1"/>
+                        <viewControllerLayoutGuide type="bottom" id="kNQ-Yb-pYT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Pm-fd-cRU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="loginBg" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-Zv-qhc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="intro" translatesAutoresizingMaskIntoConstraints="NO" id="6Kj-bj-vq5">
+                                <rect key="frame" x="35" y="228" width="250" height="169"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goq-14-yxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3436" y="1160"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="RSx-UU-YS3">
             <objects>
@@ -102,6 +126,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="loginBg" translatesAutoresizingMaskIntoConstraints="NO" id="oWZ-cF-w3q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="intro" translatesAutoresizingMaskIntoConstraints="NO" id="URM-7f-oYK">
                                 <rect key="frame" x="35" y="228" width="250" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -113,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFn-5g-oV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3217" y="1356"/>
+            <point key="canvasLocation" x="-2721" y="1160"/>
         </scene>
         <!--Navigation Controller - Me-->
         <scene sceneID="vnf-nq-JCx">
@@ -150,11 +178,12 @@
                         <segue destination="Lxn-9K-ANz" kind="relationship" relationship="viewControllers" id="ldc-kG-BmX"/>
                         <segue destination="E8P-1Q-2NC" kind="relationship" relationship="viewControllers" id="X6Q-FQ-plt"/>
                         <segue destination="nht-3s-tVo" kind="modal" identifier="loginSegue" animates="NO" id="6mv-N3-dcE"/>
+                        <segue destination="aL4-UJ-00N" kind="modal" identifier="loadingSegue" animates="NO" id="voq-iN-xgt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6eg-bn-PJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3217" y="119"/>
+            <point key="canvasLocation" x="-3785" y="237"/>
         </scene>
         <!--Navigation Controller - Town-->
         <scene sceneID="Qut-4a-rw9">
@@ -183,6 +212,7 @@
         <image name="avatar" width="24" height="21"/>
         <image name="coktail" width="22" height="27"/>
         <image name="intro" width="200" height="135"/>
+        <image name="loginBg" width="320" height="480"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -18,13 +18,25 @@
   }
   return currentUser;
 }
-
++ (void) findCurrent {
+  NSString *url = [NSString stringWithFormat:@"users/%@", [[User currentUser] userId]];
+  
+  [[RKObjectManager sharedManager] getObjectsAtPath:url
+                                         parameters:@{
+                                                      @"authentication_token": [[User currentUser] authenticationToken]
+                                                      }
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                              [[mappingResult firstObject] updateCurrentUser];
+                                            }
+                                            failure:nil
+   ];
+}
 + (BOOL)isLoggedIn {
   return !![[User currentUser] name];
 }
 
 + (BOOL)hasLoggedIn {
-  return [[NSUserDefaults standardUserDefaults] objectForKey:@"authenticationToken"];
+  return !![[NSUserDefaults standardUserDefaults] objectForKey:@"authenticationToken"];
 }
 
 - (id)updateCurrentUser {

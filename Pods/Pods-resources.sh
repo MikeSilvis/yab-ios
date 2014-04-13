@@ -41,6 +41,7 @@ install_resource()
       ;;
   esac
 }
+install_resource "BButton/BButton/resources/FontAwesome.ttf"
 install_resource "Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle"
 install_resource "FontAwesomeKit/FontAwesomeKit/FontAwesome.otf"
 install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"

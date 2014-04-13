@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1121957718DFD38F00D7887E /* UINavigationBar+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */; };
 		113CD88918F4E504000779FC /* LoadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113CD88818F4E504000779FC /* LoadingController.m */; };
+		113CD88B18F9C5E1000779FC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113CD88A18F9C5E0000779FC /* CoreLocation.framework */; };
+		113CD88E18FA21A5000779FC /* NotificationPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 113CD88D18FA21A5000779FC /* NotificationPopupView.m */; };
 		1157456818CBE95700298808 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1157456718CBE95700298808 /* User.m */; };
 		1157456E18CC00B900298808 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1157456D18CC00B900298808 /* MappingProvider.m */; };
 		117BE0A818CBDADA006950BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117BE0A718CBDADA006950BB /* Foundation.framework */; };
@@ -50,6 +52,9 @@
 		1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Yab.m"; sourceTree = "<group>"; };
 		113CD88718F4E504000779FC /* LoadingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingController.h; sourceTree = "<group>"; };
 		113CD88818F4E504000779FC /* LoadingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingController.m; sourceTree = "<group>"; };
+		113CD88A18F9C5E0000779FC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		113CD88C18FA21A5000779FC /* NotificationPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationPopupView.h; path = Views/NotificationPopupView.h; sourceTree = "<group>"; };
+		113CD88D18FA21A5000779FC /* NotificationPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationPopupView.m; path = Views/NotificationPopupView.m; sourceTree = "<group>"; };
 		1157456618CBE95700298808 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		1157456718CBE95700298808 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		1157456C18CC00B900298808 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
@@ -92,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113CD88B18F9C5E1000779FC /* CoreLocation.framework in Frameworks */,
 				117BE0AA18CBDADA006950BB /* CoreGraphics.framework in Frameworks */,
 				117BE0AC18CBDADA006950BB /* UIKit.framework in Frameworks */,
 				117BE0A818CBDADA006950BB /* Foundation.framework in Frameworks */,
@@ -112,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113CD88F18FA21AC000779FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				113CD88C18FA21A5000779FC /* NotificationPopupView.h */,
+				113CD88D18FA21A5000779FC /* NotificationPopupView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		1157456418CBE5DA00298808 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,7 @@
 		117BE0A618CBDADA006950BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				113CD88A18F9C5E0000779FC /* CoreLocation.framework */,
 				117BE0A718CBDADA006950BB /* Foundation.framework */,
 				117BE0A918CBDADA006950BB /* CoreGraphics.framework */,
 				117BE0AB18CBDADA006950BB /* UIKit.framework */,
@@ -171,6 +187,7 @@
 		117BE0AD18CBDADA006950BB /* Yab */ = {
 			isa = PBXGroup;
 			children = (
+				113CD88F18FA21AC000779FC /* Views */,
 				1157456518CBE5E100298808 /* UI */,
 				1157456418CBE5DA00298808 /* Models */,
 				11BE1D3A18CBDEEF00F9D62E /* Controllers */,
@@ -367,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119151AF18E286E7006F69E4 /* Merchant.m in Sources */,
+				113CD88E18FA21A5000779FC /* NotificationPopupView.m in Sources */,
 				117BE0C118CBDADA006950BB /* ProfileViewController.m in Sources */,
 				117BE0B818CBDADA006950BB /* AppDelegate.m in Sources */,
 				119151A918E142B3006F69E4 /* SettingsController.m in Sources */,

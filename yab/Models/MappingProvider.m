@@ -67,8 +67,8 @@
 
   RKResponseDescriptor *merchantIndexDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider merchantStyleMapping]
                                                                                                     method:RKRequestMethodGET
-                                                                                               pathPattern:@"merchant"
-                                                                                                   keyPath:@"merchant"
+                                                                                               pathPattern:@"merchants"
+                                                                                                   keyPath:@"merchants"
                                                                                                statusCodes:[NSIndexSet indexSetWithIndex:200]];
   [objectManager addResponseDescriptor:merchantIndexDescriptor];
   

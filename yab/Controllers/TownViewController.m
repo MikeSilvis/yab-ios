@@ -45,7 +45,7 @@
                                                                   };
 }
 - (void)loadBars {
-  [[RKObjectManager sharedManager] getObjectsAtPath:@"merchant"
+  [[RKObjectManager sharedManager] getObjectsAtPath:@"merchants"
                                          parameters:@{
                                                       @"authentication_token": [[User currentUser] authenticationToken]
                                                       }

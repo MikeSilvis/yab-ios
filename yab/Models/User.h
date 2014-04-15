@@ -15,6 +15,9 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *authenticationToken;
+@property (nonatomic, copy) NSString *profilePhotoUrl;
+@property (nonatomic, copy) NSString *coverPhotoUrl;
+@property (nonatomic, copy) NSString *facebookId;
 
 //@property (nonatomic, copy) NSString *username;
 //@property (nonatomic, copy) NSString *gender;

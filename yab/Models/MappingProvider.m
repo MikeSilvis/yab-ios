@@ -17,7 +17,10 @@
     @"name"                 :   @"name",
     @"id"                   :   @"userId",
     @"phone_number"         :   @"phoneNumber",
-    @"authentication_token" :   @"authenticationToken"
+    @"authentication_token" :   @"authenticationToken",
+    @"facebook_id"          :   @"facebookId",
+    @"profile_photo_url"    :   @"profilePhotoUrl",
+    @"cover_photo_url"      :   @"coverPhotoUrl"
   }];
   
   return mapping;

@@ -18,7 +18,7 @@
   }
   return currentUser;
 }
-+ (void) findCurrent {
++ (void)findCurrent {
   NSString *url = [NSString stringWithFormat:@"users/%@", [[User currentUser] userId]];
   
   [[RKObjectManager sharedManager] getObjectsAtPath:url
@@ -41,10 +41,12 @@
 
 - (id)updateCurrentUser {
   User *currentUser = [User currentUser];
-  currentUser.name = self.name;
-  currentUser.userId = self.userId;
+  currentUser.name                = self.name;
+  currentUser.userId              = self.userId;
   currentUser.authenticationToken = self.authenticationToken;
-  currentUser.phoneNumber = self.phoneNumber;
+  currentUser.phoneNumber         = self.phoneNumber;
+  currentUser.profilePhotoUrl     = self.profilePhotoUrl;
+  currentUser.coverPhotoUrl       = self.coverPhotoUrl;
   [currentUser syncUserDefaults];
   
   return currentUser;

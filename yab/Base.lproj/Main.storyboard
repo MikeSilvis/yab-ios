@@ -45,6 +45,26 @@
                     <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-3A-FMX">
+                                <rect key="frame" x="0.0" y="-58" width="320" height="255"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-op-uuM">
+                                <rect key="frame" x="110" y="20" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7O0-kl-XB1">
+                                <rect key="frame" x="0.0" y="148" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Yabs" id="Cay-31-0W1"/>
+                                    <tabBarItem title="Town Hero" id="6Lu-gh-jb7"/>
+                                </items>
+                                <color key="barTintColor" red="0.231372565" green="0.23921570180000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
+                            </tabBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="avatar" id="Z7h-1E-pvt"/>
@@ -58,6 +78,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="achievementsBar" destination="7O0-kl-XB1" id="nbD-Ab-xeM"/>
+                        <outlet property="coverPhotoUrl" destination="DZ4-3A-FMX" id="ayN-Dm-sDQ"/>
+                        <outlet property="profilePhotoUrl" destination="Zz6-op-uuM" id="x0U-Tf-LrU"/>
                         <outlet property="settingsGear" destination="Yaf-Wq-ZVe" id="5mC-gs-lKI"/>
                         <segue destination="o01-Ei-pIy" kind="push" identifier="settingsModal" id="89U-TG-1To"/>
                     </connections>

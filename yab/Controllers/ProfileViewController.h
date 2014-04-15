@@ -15,5 +15,8 @@
 @property (strong, nonatomic) IBOutlet User *user;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsGear;
 - (IBAction)settingsGearTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePhotoUrl;
+@property (weak, nonatomic) IBOutlet UIImageView *coverPhotoUrl;
+@property (weak, nonatomic) IBOutlet UITabBar *achievementsBar;
 
 @end

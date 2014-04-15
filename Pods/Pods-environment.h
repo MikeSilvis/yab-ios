@@ -12,12 +12,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 3
 
-// BButton
-#define COCOAPODS_POD_AVAILABLE_BButton
-#define COCOAPODS_VERSION_MAJOR_BButton 3
-#define COCOAPODS_VERSION_MINOR_BButton 2
-#define COCOAPODS_VERSION_PATCH_BButton 3
-
 // Facebook-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3
@@ -101,4 +95,10 @@
 #define COCOAPODS_VERSION_MAJOR_TransitionKit 2
 #define COCOAPODS_VERSION_MINOR_TransitionKit 0
 #define COCOAPODS_VERSION_PATCH_TransitionKit 0
+
+// UIImage+BlurAndDarken
+#define COCOAPODS_POD_AVAILABLE_UIImage_BlurAndDarken
+#define COCOAPODS_VERSION_MAJOR_UIImage_BlurAndDarken 0
+#define COCOAPODS_VERSION_MINOR_UIImage_BlurAndDarken 0
+#define COCOAPODS_VERSION_PATCH_UIImage_BlurAndDarken 1
 

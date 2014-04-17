@@ -8,6 +8,7 @@
 
 #import "TownViewController.h"
 #import "User.h"
+#import "Merchant.h"
 #import "AppDelegate.h"
 
 @interface TownViewController ()
@@ -51,17 +52,18 @@
                                                       @"authentication_token": [[User currentUser] authenticationToken]
                                                       }
                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                            _bars = [[NSArray alloc]initWithObjects:@"test1",@"test2",nil];
+                            Merchant* merchants = [mappingResult.array objectAtIndex:0];
+                            _bars = [[NSArray alloc]initWithObjects:merchants.name,nil];
                             if(self.isViewLoaded)
                               [_barTable reloadData];
                           }
                           failure:^(RKObjectRequestOperation *operation, NSError *error) {
-//                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-//                                                                            message:[error localizedDescription]
-//                                                                           delegate:nil
-//                                                                  cancelButtonTitle:@"OK"
-//                                                                  otherButtonTitles:nil];
-//                            [alert show];
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                            message:[error localizedDescription]
+                                                                           delegate:nil
+                                                                  cancelButtonTitle:@"OK"
+                                                                  otherButtonTitles:nil];
+                            [alert show];
                           }];
 }
 

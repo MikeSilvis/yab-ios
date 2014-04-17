@@ -22,7 +22,7 @@
   [super viewDidLoad];
   self.navigationController.topViewController.title = @"Town";
   [self loadStyles];
-  [self loadBars];
+  [self loadMerchants];
 
 }
 
@@ -30,7 +30,7 @@
   [super viewDidAppear:YES];
   
   if ([User isLoggedIn]) {
-    [self loadBars];
+    [self loadMerchants];
   }
   
 }
@@ -46,20 +46,20 @@
                                                                   NSForegroundColorAttributeName: WHITECOLOR
                                                                   };
 }
-- (void)loadBars {
+- (void)loadMerchants {
   [[RKObjectManager sharedManager] getObjectsAtPath:@"merchants"
                                          parameters:@{
                                                       @"authentication_token": [[User currentUser] authenticationToken]
                                                       }
                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                            NSArray *barlist = mappingResult.array;
-                            _bars = [[NSMutableArray alloc]init];
-                            for (id object in barlist) {
-                              Merchant *bar = object;
-                              [_bars addObject:bar.name];
+                            NSArray *merchantList = mappingResult.array;
+                            _merchants = [[NSMutableArray alloc]init];
+                            for (id object in merchantList) {
+                              Merchant *merchant = object;
+                              [_merchants addObject:merchant.name];
                             }
                             if(self.isViewLoaded)
-                              [_barTable reloadData];
+                              [_merchantTable reloadData];
                           }
                           failure:^(RKObjectRequestOperation *operation, NSError *error) {
                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -78,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return [_bars count];
+  return [_merchants count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,7 +90,7 @@
     cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
 
-  cell.textLabel.text = [_bars objectAtIndex:indexPath.row];
+  cell.textLabel.text = [_merchants objectAtIndex:indexPath.row];
   cell.detailTextLabel.text = @"Promoted";
   return cell;
 }

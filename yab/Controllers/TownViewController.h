@@ -10,8 +10,8 @@
 
 @interface TownViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITableView *barTable;
+@property (strong, nonatomic) IBOutlet UITableView *merchantTable;
 
-@property (strong, nonatomic) NSMutableArray *bars;
+@property (strong, nonatomic) NSMutableArray *merchants;
 
 @end

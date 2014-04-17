@@ -55,7 +55,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tXz-a9-gEz"/>
                     <connections>
-                        <outlet property="barTable" destination="Aze-Gv-Box" id="vDq-Q2-8JY"/>
+                        <outlet property="merchantTable" destination="Aze-Gv-Box" id="QR3-aC-bUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>

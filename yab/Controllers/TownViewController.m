@@ -79,7 +79,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  static NSString *CellIdentifier= @"Bar";
+  static NSString *CellIdentifier= @"Merchant";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
   if (cell == nil){
@@ -87,6 +87,7 @@
   }
 
   cell.textLabel.text = [_bars objectAtIndex:indexPath.row];
+  cell.detailTextLabel.text = @"Promoted";
   return cell;
 }
 

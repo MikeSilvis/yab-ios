@@ -21,7 +21,7 @@
   [super viewDidLoad];
   self.navigationController.topViewController.title = @"Town";
   [self loadStyles];
-  _bars = [[NSArray alloc]initWithObjects:@"Mike",@"Cam", nil];
+  [self loadBars];
 
 }
 
@@ -51,11 +51,9 @@
                                                       @"authentication_token": [[User currentUser] authenticationToken]
                                                       }
                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-//                            NSArray* bars = [mappingResult array];
-//                            NSLog(@"%@", bars);
-//                            _statuses = statuses;
-//                            if(self.isViewLoaded)
-//                              [_tableView reloadData];
+                            _bars = [[NSArray alloc]initWithObjects:@"test1",@"test2",nil];
+                            if(self.isViewLoaded)
+                              [_barTable reloadData];
                           }
                           failure:^(RKObjectRequestOperation *operation, NSError *error) {
 //                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"

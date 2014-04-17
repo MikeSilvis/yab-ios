@@ -52,8 +52,12 @@
                                                       @"authentication_token": [[User currentUser] authenticationToken]
                                                       }
                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                            Merchant* merchants = [mappingResult.array objectAtIndex:0];
-                            _bars = [[NSArray alloc]initWithObjects:merchants.name,nil];
+                            NSArray *barlist = mappingResult.array;
+                            _bars = [[NSMutableArray alloc]init];
+                            for (id object in barlist) {
+                              Merchant *bar = object;
+                              [_bars addObject:bar.name];
+                            }
                             if(self.isViewLoaded)
                               [_barTable reloadData];
                           }

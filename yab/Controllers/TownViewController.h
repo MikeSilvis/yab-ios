@@ -12,6 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *barTable;
 
-@property (strong, nonatomic) NSArray *bars;
+@property (strong, nonatomic) NSMutableArray *bars;
 
 @end

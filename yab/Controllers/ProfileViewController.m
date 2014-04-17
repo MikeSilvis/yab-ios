@@ -8,7 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "AppDelegate.h"
-#import "UIImage+BlurAndDarken.h"
+#import "UIImage+Yab.h"
 
 @interface ProfileViewController ()
 
@@ -19,16 +19,13 @@
 - (void)viewDidLoad {
     self.navigationController.topViewController.title = @"Me";
     [self loadStyles];
-    [self loadImages];
+    [self loadLevel];
     [super viewDidLoad];
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+    [self loadImages];
 }
 
 - (User *)user {
@@ -51,19 +48,28 @@
   self.navigationController.navigationBar.titleTextAttributes = @{
                                                                   NSForegroundColorAttributeName: WHITECOLOR
                                                                   };
+  UIToolbar *blurToolbar = [[UIToolbar alloc] initWithFrame:self.coverPhotoUrl.bounds];
+  blurToolbar.barStyle = UIBarStyleBlackTranslucent;
+  blurToolbar.translucent = YES;
+  blurToolbar.alpha = 0.5;
+  [self.coverPhotoUrl addSubview:blurToolbar];
+  
   // Achievements Bar
   self.achievementsBar.backgroundColor = BLACKCOLOR;
   self.achievementsBar.translucent = NO;
+  [[UITabBar appearance] setSelectedImageTintColor:WHITECOLOR];
   [[UITabBarItem appearance] setTitleTextAttributes:@{
                                                       NSForegroundColorAttributeName: WHITECOLOR,
-                                                      NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:14.0f]
+                                                      NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Bold" size:10.0f]
                                                       }
                                            forState:UIControlStateNormal];
 }
 - (void)loadImages {
   // Profile Photo
-  NSURL *profileUrl = [NSURL URLWithString:self.user.profilePhotoUrl];
-  [self.profilePhotoUrl setImageWithURL:profileUrl];
+  if (!![self.user.profilePhotoUrl length]) {
+    NSURL *profileUrl = [NSURL URLWithString:self.user.profilePhotoUrl];
+    [self.profilePhotoUrl setImageWithURL:profileUrl];
+  }
   self.profilePhotoUrl.layer.borderColor = BLACKCOLOR.CGColor;
   self.profilePhotoUrl.layer.borderWidth = 3;
   self.profilePhotoUrl.layer.masksToBounds = YES;
@@ -71,22 +77,30 @@
   self.profilePhotoUrl.clipsToBounds = YES;
 
   // Cover Photo
-  NSURL *coverUrl = [NSURL URLWithString:self.user.coverPhotoUrl];
-  NSData *coverData = [NSData dataWithContentsOfURL:coverUrl];
-  UIImage *coverImg = [[UIImage alloc] initWithData:coverData];
-  self.coverPhotoUrl.image = coverImg;
-
-  // Blur Photo
-  __weak ProfileViewController *weakSelf = self;
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
-    UIImage *image = [weakSelf.coverPhotoUrl.image darkened:0.5f andBlurredImage:3.0f blendModeFilterName:@"CIMultiplyBlendMode"];
-
-    __weak ProfileViewController *innerSelf = weakSelf;
-    dispatch_async(dispatch_get_main_queue(), ^{
-      innerSelf.coverPhotoUrl.image = image;
-    });
-  });
+  if (!![self.user.coverPhotoUrl length]) {
+    NSURL *coverUrl = [NSURL URLWithString:self.user.coverPhotoUrl];
+    [self.coverPhotoUrl setImageWithURL:coverUrl];
+  } else {
+    [self.coverPhotoUrl setImage:[UIImage imageNamed:@"coverDefault"]];
+  }
+}
+- (void)loadLevel {
+  [self.achievementsBar.items[1] setTitle:self.user.levelName];
+  NSURL *url = [NSURL URLWithString:self.user.levelIconUrl];
+  UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:url]];
+  [self.achievementsBar.items[1] setFinishedSelectedImage:img
+                              withFinishedUnselectedImage:img
+   ];
   
+  UIImage *customTextImage = [[UIImage drawText:self.user.yabs
+                                       inImage:[UIImage imageNamed:@"yabs"]
+                                       atPoint:CGPointMake(0, 0)]
+                              imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+  [self.achievementsBar.items[0] setFinishedSelectedImage:customTextImage
+                              withFinishedUnselectedImage:customTextImage
+   ];
+
 }
 
 - (IBAction)settingsGearTouched:(id)sender {

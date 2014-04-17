@@ -20,7 +20,10 @@
     @"authentication_token" :   @"authenticationToken",
     @"facebook_id"          :   @"facebookId",
     @"profile_photo_url"    :   @"profilePhotoUrl",
-    @"cover_photo_url"      :   @"coverPhotoUrl"
+    @"cover_photo_url"      :   @"coverPhotoUrl",
+    @"level_name"           :   @"levelName",
+    @"level_icon_url"       :   @"levelIconUrl",
+    @"yabs"                 :   @"yabs",
   }];
   
   return mapping;

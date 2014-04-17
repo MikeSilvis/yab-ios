@@ -42,7 +42,8 @@
                                         [self dismissViewControllerAnimated:NO completion:nil];
                                       }
                                       failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                      }];
+                                      }
+   ];
 }
 
 @end

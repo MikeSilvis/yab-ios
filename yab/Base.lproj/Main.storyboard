@@ -28,6 +28,7 @@
                     <navigationItem key="navigationItem" id="tXz-a9-gEz"/>
                     <connections>
                         <outlet property="barTable" destination="GJg-PN-z5a" id="apQ-no-NJu"/>
+                        <segue destination="nht-3s-tVo" kind="modal" identifier="loginSegue" animates="NO" id="BGP-WH-sp9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -46,8 +47,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-3A-FMX">
-                                <rect key="frame" x="0.0" y="-58" width="320" height="255"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-3A-FMX">
+                                <rect key="frame" x="0.0" y="-58" width="320" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-op-uuM">
@@ -59,8 +60,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Yabs" id="Cay-31-0W1"/>
-                                    <tabBarItem title="Town Hero" id="6Lu-gh-jb7"/>
+                                    <tabBarItem title="Yabs" image="yabs" id="Cay-31-0W1"/>
+                                    <tabBarItem title="Town Hero" image="yabs" id="6Lu-gh-jb7"/>
                                 </items>
                                 <color key="barTintColor" red="0.231372565" green="0.23921570180000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
                             </tabBar>
@@ -83,6 +84,7 @@
                         <outlet property="profilePhotoUrl" destination="Zz6-op-uuM" id="x0U-Tf-LrU"/>
                         <outlet property="settingsGear" destination="Yaf-Wq-ZVe" id="5mC-gs-lKI"/>
                         <segue destination="o01-Ei-pIy" kind="push" identifier="settingsModal" id="89U-TG-1To"/>
+                        <segue destination="nht-3s-tVo" kind="modal" identifier="loginSegue" animates="NO" id="i9v-Aw-L9S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
@@ -237,6 +239,7 @@
         <image name="coktail" width="22" height="27"/>
         <image name="intro" width="200" height="135"/>
         <image name="loginBg" width="320" height="480"/>
+        <image name="yabs" width="320" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -244,6 +247,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6mv-N3-dcE"/>
+        <segue reference="i9v-Aw-L9S"/>
     </inferredMetricsTieBreakers>
 </document>

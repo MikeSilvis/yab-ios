@@ -18,6 +18,21 @@
   return UIStatusBarStyleLightContent;
 }
 - (void)findCurrentUser {
+  NSString *url = [NSString stringWithFormat:@"users/%@", [[User currentUser] userId]];
+  
+  [[RKObjectManager sharedManager] getObjectsAtPath:url
+                                         parameters:@{
+                                                      @"authentication_token": [[User currentUser] authenticationToken]
+                                                      }
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                              [[mappingResult firstObject] updateCurrentUser];
+                                              [self dismissViewControllerAnimated:NO completion:nil];
+                                            }
+                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                              [[User currentUser] logOut];
+                                              [self dismissViewControllerAnimated:NO completion:nil];
+                                            }
+   ];
 }
 
 @end

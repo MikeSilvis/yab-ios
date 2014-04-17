@@ -18,19 +18,7 @@
   }
   return currentUser;
 }
-+ (void)findCurrent {
-  NSString *url = [NSString stringWithFormat:@"users/%@", [[User currentUser] userId]];
-  
-  [[RKObjectManager sharedManager] getObjectsAtPath:url
-                                         parameters:@{
-                                                      @"authentication_token": [[User currentUser] authenticationToken]
-                                                      }
-                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                              [[mappingResult firstObject] updateCurrentUser];
-                                            }
-                                            failure:nil
-   ];
-}
+
 + (BOOL)isLoggedIn {
   return !![[User currentUser] name];
 }
@@ -47,6 +35,10 @@
   currentUser.phoneNumber         = self.phoneNumber;
   currentUser.profilePhotoUrl     = self.profilePhotoUrl;
   currentUser.coverPhotoUrl       = self.coverPhotoUrl;
+  currentUser.levelName           = self.levelName;
+  currentUser.levelIconUrl        = self.levelIconUrl;
+  currentUser.yabs                = self.yabs;
+  
   [currentUser syncUserDefaults];
   
   return currentUser;

@@ -22,15 +22,14 @@
   self.navigationController.topViewController.title = @"Town";
   [self loadStyles];
 
-}
-
--(void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:YES];
-  
   if ([User isLoggedIn]) {
     [self loadBars];
   }
   
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +56,8 @@
 //                              [_tableView reloadData];
                           }
                           failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                            
+//                            [User log]
 //                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
 //                                                                            message:[error localizedDescription]
 //                                                                           delegate:nil

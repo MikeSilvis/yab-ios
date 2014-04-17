@@ -33,6 +33,7 @@
 		11954BF518E51AFE00D81D03 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 11954BF418E51AFE00D81D03 /* Location.m */; };
 		11BE1D3918CBDEEA00F9D62E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */; };
 		11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */; };
+		11F4DA1118FF41620084CE7F /* UIImage+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DA1018FF41620084CE7F /* UIImage+Yab.m */; };
 		99ABBF06BA7D41A7BBA6104D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C750AF8A9B64BF0A239336C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		11D2099B18DF6B6F00A30FD3 /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
 		11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
+		11F4DA0F18FF41620084CE7F /* UIImage+Yab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Yab.h"; sourceTree = "<group>"; };
+		11F4DA1018FF41620084CE7F /* UIImage+Yab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Yab.m"; sourceTree = "<group>"; };
 		3C750AF8A9B64BF0A239336C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,6 +150,8 @@
 			children = (
 				1121957518DFD38F00D7887E /* UINavigationBar+Yab.h */,
 				1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */,
+				11F4DA0F18FF41620084CE7F /* UIImage+Yab.h */,
+				11F4DA1018FF41620084CE7F /* UIImage+Yab.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				1157456818CBE95700298808 /* User.m in Sources */,
 				113CD88918F4E504000779FC /* LoadingController.m in Sources */,
 				1157456E18CC00B900298808 /* MappingProvider.m in Sources */,
+				11F4DA1118FF41620084CE7F /* UIImage+Yab.m in Sources */,
 				117BE0BE18CBDADA006950BB /* TownViewController.m in Sources */,
 				1121957718DFD38F00D7887E /* UINavigationBar+Yab.m in Sources */,
 				117BE0B418CBDADA006950BB /* main.m in Sources */,

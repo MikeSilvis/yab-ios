@@ -18,14 +18,48 @@
   [super viewDidAppear:NO];
   
   if ([User hasLoggedIn]) {
-    [self setupBeaon];
     if (![User isLoggedIn]) {
-      [User findCurrent];
+      [self loginUser];
     }
   } else {
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
   }
+}
+- (void)loginUser {
+  NSString *url = [NSString stringWithFormat:@"users/%@", [[User currentUser] userId]];
+
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(LoginFailed:) name:@"LoginFailed" object:nil];
   
+   __block id weakSelf = self;
+  [[RKObjectManager sharedManager] getObjectsAtPath:url
+                                         parameters:@{
+                                                      @"authentication_token": [[User currentUser] authenticationToken]
+                                                      }
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                              [[mappingResult firstObject] updateCurrentUser];
+                                              [self setupBeaon];
+                                            }
+                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                              [[User currentUser] logOut];
+                                              [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginFailed" object:weakSelf];
+                                            }
+   ];
+}
+
+- (void)LoginFailed:(NSNotification *) notification {
+  if ([FBSession activeSession]) {
+    id params = @{@"user": @{ @"facebook_auth_token":[FBSession activeSession].accessTokenData.accessToken } };
+    [[RKObjectManager sharedManager] postObject:params path:@"authentication" parameters:params
+                                        success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                          [[mappingResult firstObject] updateCurrentUser];
+                                        }
+                                        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                          [self performSegueWithIdentifier:@"loginSegue" sender:self];
+                                        }
+     ];
+  } else {
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+  }
 }
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -43,7 +77,7 @@
 }
 
 - (void)setupBeaon {
-  [self addNotification];
+//  [self addNotification];
   self.locationManager = [[CLLocationManager alloc] init];
   self.locationManager.delegate = self;
   
@@ -134,6 +168,21 @@
       break;
   }
 }
+- (void) dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//  if([segue.identifier isEqualToString:@"contactShowSegue"]) {
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    ContactShowViewController *destViewController = segue.destinationViewController;
+//    [self removeNotifications];
+//    if (indexPath){
+//      destViewController.contact = (self.objects)[indexPath.row];
+//    } else if (self.lastAddedColleague != nil){
+//      destViewController.contact = self.lastAddedColleague;
+//    }
+//  }
+//}
 
 @end

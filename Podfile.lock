@@ -28,14 +28,12 @@ PODS:
   - SOCKit (1.1)
   - SVProgressHUD (1.0)
   - TransitionKit (2.0.0)
-  - UIImage+BlurAndDarken (0.0.1)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
   - FontAwesomeKit/FontAwesome
   - RestKit
   - SVProgressHUD
-  - UIImage+BlurAndDarken
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
@@ -47,6 +45,5 @@ SPEC CHECKSUMS:
   SOCKit: 8871d058926a6c6cc144f0c5eee82c5d0ec274a3
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
-  UIImage+BlurAndDarken: e8624dc1153e8bd73d2eabd36a193741e91d43c1
 
 COCOAPODS: 0.29.0

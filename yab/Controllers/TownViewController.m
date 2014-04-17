@@ -21,6 +21,7 @@
   [super viewDidLoad];
   self.navigationController.topViewController.title = @"Town";
   [self loadStyles];
+  _bars = [[NSArray alloc]initWithObjects:@"Mike",@"Cam", nil];
 
 }
 
@@ -64,6 +65,29 @@
 //                                                                  otherButtonTitles:nil];
 //                            [alert show];
                           }];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+  return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return [_bars count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  static NSString *CellIdentifier= @"Bar";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+  
+  if (cell == nil){
+    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+  }
+
+  cell.textLabel.text = [_bars objectAtIndex:indexPath.row];
+  return cell;
 }
 
 @end

@@ -13,7 +13,7 @@
 +(UIImage*) drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point {
   
   UIFont *font = [UIFont fontWithName:@"Helvetica-Bold" size:18.0f];
-  UIGraphicsBeginImageContext(image.size);
+   UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0f);
     [image drawInRect:CGRectMake(0,0,image.size.width, image.size.height)];
     NSDictionary *dict = @{ NSFontAttributeName:font, NSForegroundColorAttributeName: WHITECOLOR };
     CGRect rect = CGRectMake(

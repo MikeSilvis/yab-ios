@@ -172,17 +172,4 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//  if([segue.identifier isEqualToString:@"contactShowSegue"]) {
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    ContactShowViewController *destViewController = segue.destinationViewController;
-//    [self removeNotifications];
-//    if (indexPath){
-//      destViewController.contact = (self.objects)[indexPath.row];
-//    } else if (self.lastAddedColleague != nil){
-//      destViewController.contact = self.lastAddedColleague;
-//    }
-//  }
-//}
-
 @end

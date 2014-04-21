@@ -65,6 +65,11 @@
                                 </items>
                                 <color key="barTintColor" red="0.231372565" green="0.23921570180000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
                             </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qYt-7p-qP1">
+                                <rect key="frame" x="0.0" y="197" width="320" height="258"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -239,7 +244,7 @@
         <image name="coktail" width="22" height="27"/>
         <image name="intro" width="200" height="135"/>
         <image name="loginBg" width="320" height="480"/>
-        <image name="yabs" width="320" height="42"/>
+        <image name="yabs" width="160" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

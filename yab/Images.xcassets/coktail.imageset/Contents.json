@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "88-beer-glass.png"
+      "filename" : "cocktail-small.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "88-beer-glass@2x.png"
+      "filename" : "cocktail.png"
     }
   ],
   "info" : {

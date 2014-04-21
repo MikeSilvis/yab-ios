@@ -87,7 +87,9 @@
 - (void)loadLevel {
   [self.achievementsBar.items[1] setTitle:self.user.levelName];
   NSURL *url = [NSURL URLWithString:self.user.levelIconUrl];
-  UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:url]];
+  UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:url] scale:[[UIScreen mainScreen] scale]];
+  
+  // Deprecated - Use -initWithTitle:image:selectedImage:
   [self.achievementsBar.items[1] setFinishedSelectedImage:img
                               withFinishedUnselectedImage:img
    ];

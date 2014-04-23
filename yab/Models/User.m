@@ -35,9 +35,8 @@
   currentUser.phoneNumber         = self.phoneNumber;
   currentUser.profilePhotoUrl     = self.profilePhotoUrl;
   currentUser.coverPhotoUrl       = self.coverPhotoUrl;
-  currentUser.levelName           = self.levelName;
-  currentUser.levelIconUrl        = self.levelIconUrl;
-  currentUser.yabs                = self.yabs;
+  currentUser.level               = self.level;
+  currentUser.merchants           = self.merchants;
   
   [currentUser syncUserDefaults];
   
@@ -51,7 +50,7 @@
   [defaults synchronize];
 }
 
-- (NSString *)userId {
+- (NSNumber *)userId {
   if (_userId) {
     return _userId;
   } else {

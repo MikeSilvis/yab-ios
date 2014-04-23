@@ -20,23 +20,53 @@
     @"authentication_token" :   @"authenticationToken",
     @"facebook_id"          :   @"facebookId",
     @"profile_photo_url"    :   @"profilePhotoUrl",
-    @"cover_photo_url"      :   @"coverPhotoUrl",
-    @"level_name"           :   @"levelName",
-    @"level_icon_url"       :   @"levelIconUrl",
-    @"yabs"                 :   @"yabs",
+    @"cover_photo_url"      :   @"coverPhotoUrl"
+  }];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"level"
+                                                                          toKeyPath:@"level"
+                                                                        withMapping:[MappingProvider levelStyleMapping]]];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"merchants"
+                                                                          toKeyPath:@"merchants"
+                                                                        withMapping:[MappingProvider merchantStyleMapping]]];
+  
+  return mapping;
+}
++ (RKMapping *)levelStyleMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Level class]];
+  
+  [mapping addAttributeMappingsFromDictionary:@{
+    @"name"                 :   @"name",
+    @"points"               :   @"points",
+    @"next"                 :   @"next",
+    @"earned"               :   @"earned",
+    @"icon_url"             :   @"iconUrl"
   }];
   
   return mapping;
 }
+
 + (RKMapping *)merchantStyleMapping {
   RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Merchant class]];
   
   [mapping addAttributeMappingsFromDictionary:@{
-                                                @"id"                   :   @"merchantId",
-                                                @"name"                 :   @"name",
-                                                @"avatar_url"           :   @"avatarUrl",
-                                                @"points"               :   @"points",
-                                                }];
+    @"id"                   :   @"merchantId",
+    @"name"                 :   @"name",
+    @"avatar_url"           :   @"avatarUrl",
+  }];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"level"
+                                                                          toKeyPath:@"level"
+                                                                        withMapping:[MappingProvider levelStyleMapping]]];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"rewards"
+                                                                          toKeyPath:@"rewards"
+                                                                        withMapping:[MappingProvider rewardStyleMapping]]];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"locations"
+                                                                          toKeyPath:@"locations"
+                                                                        withMapping:[MappingProvider locationStyleMapping]]];
   
   return mapping;
 }
@@ -44,10 +74,18 @@
   RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Location class]];
   
   [mapping addAttributeMappingsFromDictionary:@{
-                                                @"id"                   :   @"locationtId",
-                                                @"latitude"             :   @"latitude",
-                                                @"longitude"            :   @"longitude",
-                                                }];
+    @"id"                   :   @"locationtId",
+  }];
+  
+  return mapping;
+}
++ (RKMapping *)rewardStyleMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Reward class]];
+  
+  [mapping addAttributeMappingsFromDictionary:@{
+    @"name"                 :   @"name",
+    @"points"               :   @"points",
+  }];
   
   return mapping;
 }
@@ -55,11 +93,12 @@
   RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Checkin class]];
   
   [mapping addAttributeMappingsFromDictionary:@{
-                                                @"id"                   :   @"checkinId",
-                                                @"message"              :   @"message",
-                                                @"points"              :    @"points",
-                                                @"next_level_points"    :   @"nextLevelPoints",
-                                                }];
+    @"id"                   :   @"checkinId",
+    @"message"              :   @"message",
+    @"points"               :   @"points",
+    @"next_level_points"    :   @"nextLevelPoints",
+  }];
+  
   [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
                                                                           toKeyPath:@"user"
                                                                         withMapping:[MappingProvider userStyleMapping]]];
@@ -71,6 +110,11 @@
   [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"location"
                                                                           toKeyPath:@"location"
                                                                         withMapping:[MappingProvider locationStyleMapping]]];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"level"
+                                                                          toKeyPath:@"level"
+                                                                        withMapping:[MappingProvider levelStyleMapping]]];
+  
   return mapping;
 }
 

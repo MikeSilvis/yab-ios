@@ -12,10 +12,13 @@
 #import "Merchant.h"
 #import "Location.h"
 #import "Checkin.h"
+#import "Reward.h"
+#import "Level.h"
 
 @interface MappingProvider : NSObject
 
 + (RKMapping *)userStyleMapping;
++ (RKMapping *)levelStyleMapping;
 + (RKMapping *)merchantStyleMapping;
 + (RKMapping *)locationStyleMapping;
 

@@ -7,21 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "Level.h"
+#import "Merchant.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface User : NSObject
 
-@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSNumber *userId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *authenticationToken;
 @property (nonatomic, copy) NSString *facebookId;
-@property (nonatomic, copy) NSString *levelName;
-@property (nonatomic, copy) NSString *yabs;
 
 @property (nonatomic, copy) NSURL    *profilePhotoUrl;
 @property (nonatomic, copy) NSURL    *coverPhotoUrl;
-@property (nonatomic, copy) NSURL    *levelIconUrl;
+
+@property (nonatomic) Level* level;
+@property (nonatomic) NSArray* merchants;
 
 + (id)currentUser;
 + (BOOL)isLoggedIn;

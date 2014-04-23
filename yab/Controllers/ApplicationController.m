@@ -17,6 +17,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:NO];
+  [self testNotification];
   
   if ([User hasLoggedIn]) {
     if (![User isLoggedIn]) {
@@ -157,7 +158,18 @@
     
   }
 }
-
+- (void)testNotification {
+  id params = @{ @"checkin":
+                   @{ @"major": @"1", @"minor": @"1" },
+                 @"authentication_token": [[User currentUser] authenticationToken]
+                 };
+  [[RKObjectManager sharedManager] postObject:params path:@"checkins" parameters:params
+                                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                        [self addNotification:[mappingResult firstObject]];
+                                      }
+                                      failure:nil
+   ];
+}
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

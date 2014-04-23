@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Level.h"
 
 @interface Merchant : NSObject
 
-@property (nonatomic, copy) NSString *merchantId;
+@property (nonatomic, copy) NSNumber *merchantId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSURL *avatarUrl;
+
+@property (nonatomic, copy) NSArray *rewards;
+@property (nonatomic, copy) NSArray *locations;
+
+@property (nonatomic) Level *level;
 
 @end

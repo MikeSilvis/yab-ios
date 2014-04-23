@@ -10,12 +10,4 @@
 
 @implementation Checkin
 
-- (float)nextLevelPercent {
-  if (self.nextLevelPoints == 0) {
-    return 1;
-  } else {
-   return (int) self.points / (float) self.nextLevelPoints;
-  }
-}
-
 @end

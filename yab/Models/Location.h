@@ -10,8 +10,6 @@
 
 @interface Location : NSObject
 
-@property (nonatomic, copy) NSString *locationtId;
-@property (nonatomic, copy) NSString *latitude;
-@property (nonatomic, copy) NSString *longitude;
+@property (nonatomic, copy) NSNumber *locationtId;
 
 @end

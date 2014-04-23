@@ -24,6 +24,8 @@
 - (void)myInitialization {
   self.opaque = NO;
   self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9f];
+
+  [self.checkin.user updateCurrentUser];
   
   // Close
   UIButton *merchantClose = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -36,7 +38,7 @@
 
   // Yabs
   UILabel *points = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, self.frame.size.width, 50)];
-  points.text = [NSString stringWithFormat:@"%d",self.checkin.points];
+  points.text = [NSString stringWithFormat:@"%@",self.checkin.level.earned];
   points.textColor = GREENCOLOR;
   points.font = [UIFont fontWithName:@"Helvetica-Bold" size:40];
   points.textAlignment = NSTextAlignmentCenter;
@@ -78,7 +80,7 @@
   
   // Progress Bar
   UIProgressView *progressBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 350, self.frame.size.width, 20)];
-  [progressBar setProgress:self.checkin.nextLevelPercent animated:YES];
+  [progressBar setProgress:self.checkin.level.nextLevelPercent animated:YES];
   progressBar.progressTintColor = GREENCOLOR;
   progressBar.trackTintColor = WHITECOLOR;
   [self addSubview:progressBar];

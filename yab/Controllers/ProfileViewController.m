@@ -18,14 +18,14 @@
 
 - (void)viewDidLoad {
     self.navigationController.topViewController.title = @"Me";
-    [self loadLevel];
-    [self loadStyles];
     [self loadImages];
     [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
+    [self loadStyles];
+    [self loadLevel];
 }
 
 - (User *)user {
@@ -48,11 +48,6 @@
   self.navigationController.navigationBar.titleTextAttributes = @{
                                                                   NSForegroundColorAttributeName: WHITECOLOR
                                                                   };
-  UIToolbar *blurToolbar = [[UIToolbar alloc] initWithFrame:self.coverPhotoUrl.bounds];
-  blurToolbar.barStyle = UIBarStyleBlackTranslucent;
-  blurToolbar.translucent = YES;
-  blurToolbar.alpha = 0.5;
-  [self.coverPhotoUrl addSubview:blurToolbar];
   
   // Achievements Bar
   self.achievementsBar.backgroundColor = BLACKCOLOR;
@@ -84,10 +79,17 @@
   } else {
     [self.coverPhotoUrl setImage:[UIImage imageNamed:@"coverDefault"]];
   }
+
+  UIToolbar *blurToolbar = [[UIToolbar alloc] initWithFrame:self.coverPhotoUrl.bounds];
+  blurToolbar.barStyle = UIBarStyleBlackTranslucent;
+  blurToolbar.translucent = YES;
+  blurToolbar.alpha = 0.5;
+  [self.coverPhotoUrl addSubview:blurToolbar];
+  
 }
 - (void)loadLevel {
   dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-    UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:self.user.levelIconUrl] scale:[[UIScreen mainScreen] scale]];
+    UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:self.user.level.iconUrl] scale:[[UIScreen mainScreen] scale]];
     
     dispatch_async(dispatch_get_main_queue(), ^(void){
       [self.achievementsBar.items[1] setFinishedSelectedImage:img
@@ -97,9 +99,9 @@
 
   });
   
-  [self.achievementsBar.items[1] setTitle:self.user.levelName];
+  [self.achievementsBar.items[1] setTitle:self.user.level.name];
   
-  UIImage *customTextImage = [[UIImage drawText:self.user.yabs
+  UIImage *customTextImage = [[UIImage drawText:[self.user.level.points stringValue]
                                        inImage:[UIImage imageNamed:@"yabs"]
                                        atPoint:CGPointMake(0, 0)]
                               imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

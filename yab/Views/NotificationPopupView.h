@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "ApplicationController.h"
+#import "Checkin.h"
 
 @interface NotificationPopupView : UIView
 
+- (id)initWithCheckin:(Checkin *)checkin frame:(CGRect)aRect;
+@property (nonatomic) Checkin* checkin;
 
 @end

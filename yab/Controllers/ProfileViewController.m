@@ -18,14 +18,14 @@
 
 - (void)viewDidLoad {
     self.navigationController.topViewController.title = @"Me";
-    [self loadStyles];
     [self loadLevel];
+    [self loadStyles];
+    [self loadImages];
     [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    [self loadImages];
 }
 
 - (User *)user {
@@ -66,10 +66,12 @@
 }
 - (void)loadImages {
   // Profile Photo
-  if (!![self.user.profilePhotoUrl length]) {
-    NSURL *profileUrl = [NSURL URLWithString:self.user.profilePhotoUrl];
-    [self.profilePhotoUrl setImageWithURL:profileUrl];
+  if (!![self.user.profilePhotoUrl host]) {
+    [self.profilePhotoUrl setImageWithURL:self.user.profilePhotoUrl];
+  } else {
+    [self.profilePhotoUrl setImage:[UIImage imageNamed:@"blankAvatar"]];
   }
+
   self.profilePhotoUrl.layer.borderColor = BLACKCOLOR.CGColor;
   self.profilePhotoUrl.layer.borderWidth = 3;
   self.profilePhotoUrl.layer.masksToBounds = YES;
@@ -77,22 +79,25 @@
   self.profilePhotoUrl.clipsToBounds = YES;
 
   // Cover Photo
-  if (!![self.user.coverPhotoUrl length]) {
-    NSURL *coverUrl = [NSURL URLWithString:self.user.coverPhotoUrl];
-    [self.coverPhotoUrl setImageWithURL:coverUrl];
+  if (!![self.user.profilePhotoUrl host]) {
+    [self.coverPhotoUrl setImageWithURL:self.user.coverPhotoUrl];
   } else {
     [self.coverPhotoUrl setImage:[UIImage imageNamed:@"coverDefault"]];
   }
 }
 - (void)loadLevel {
-  [self.achievementsBar.items[1] setTitle:self.user.levelName];
-  NSURL *url = [NSURL URLWithString:self.user.levelIconUrl];
-  UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:url] scale:[[UIScreen mainScreen] scale]];
+  dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+    UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:self.user.levelIconUrl] scale:[[UIScreen mainScreen] scale]];
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+      [self.achievementsBar.items[1] setFinishedSelectedImage:img
+                                  withFinishedUnselectedImage:img
+       ];
+    });
+
+  });
   
-  // Deprecated - Use -initWithTitle:image:selectedImage:
-  [self.achievementsBar.items[1] setFinishedSelectedImage:img
-                              withFinishedUnselectedImage:img
-   ];
+  [self.achievementsBar.items[1] setTitle:self.user.levelName];
   
   UIImage *customTextImage = [[UIImage drawText:self.user.yabs
                                        inImage:[UIImage imageNamed:@"yabs"]

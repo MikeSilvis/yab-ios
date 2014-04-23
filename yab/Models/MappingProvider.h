@@ -11,6 +11,7 @@
 #import "User.h"
 #import "Merchant.h"
 #import "Location.h"
+#import "Checkin.h"
 
 @interface MappingProvider : NSObject
 

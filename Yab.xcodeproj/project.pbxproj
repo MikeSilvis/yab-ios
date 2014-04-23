@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110DA3911905D4D300CE4957 /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 110DA3901905D4D300CE4957 /* Checkin.m */; };
 		1121957718DFD38F00D7887E /* UINavigationBar+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */; };
 		113CD88918F4E504000779FC /* LoadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113CD88818F4E504000779FC /* LoadingController.m */; };
 		113CD88B18F9C5E1000779FC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113CD88A18F9C5E0000779FC /* CoreLocation.framework */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		036E00DF538642A6BDDA131B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		110DA38F1905D4D300CE4957 /* Checkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkin.h; sourceTree = "<group>"; };
+		110DA3901905D4D300CE4957 /* Checkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checkin.m; sourceTree = "<group>"; };
 		1121957518DFD38F00D7887E /* UINavigationBar+Yab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Yab.h"; sourceTree = "<group>"; };
 		1121957618DFD38F00D7887E /* UINavigationBar+Yab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Yab.m"; sourceTree = "<group>"; };
 		113CD88718F4E504000779FC /* LoadingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingController.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				119151AE18E286E7006F69E4 /* Merchant.m */,
 				11954BF318E51AFE00D81D03 /* Location.h */,
 				11954BF418E51AFE00D81D03 /* Location.m */,
+				110DA38F1905D4D300CE4957 /* Checkin.h */,
+				110DA3901905D4D300CE4957 /* Checkin.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				1157456818CBE95700298808 /* User.m in Sources */,
 				113CD88918F4E504000779FC /* LoadingController.m in Sources */,
 				1157456E18CC00B900298808 /* MappingProvider.m in Sources */,
+				110DA3911905D4D300CE4957 /* Checkin.m in Sources */,
 				11F4DA1118FF41620084CE7F /* UIImage+Yab.m in Sources */,
 				117BE0BE18CBDADA006950BB /* TownViewController.m in Sources */,
 				1121957718DFD38F00D7887E /* UINavigationBar+Yab.m in Sources */,

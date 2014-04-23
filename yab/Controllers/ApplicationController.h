@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-#define BEACON_UUID @"259B43F9-F6B7-498D-9448-BCF5EAAF1C85"
+#define BEACON_UUID @"DF230DEF-F8FD-4C63-B89D-D8907EEDD6A7"
 #define IDENTIFIER @"Yab.Yab"
 
 @interface ApplicationController : UITabBarController  <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSMutableDictionary *locationsSent;
 
 @end

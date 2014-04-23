@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy) NSString *merchantId;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSURL *avatarUrl;
 
 @end

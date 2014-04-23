@@ -15,12 +15,13 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *authenticationToken;
-@property (nonatomic, copy) NSString *profilePhotoUrl;
-@property (nonatomic, copy) NSString *coverPhotoUrl;
 @property (nonatomic, copy) NSString *facebookId;
 @property (nonatomic, copy) NSString *levelName;
-@property (nonatomic, copy) NSString *levelIconUrl;
 @property (nonatomic, copy) NSString *yabs;
+
+@property (nonatomic, copy) NSURL    *profilePhotoUrl;
+@property (nonatomic, copy) NSURL    *coverPhotoUrl;
+@property (nonatomic, copy) NSURL    *levelIconUrl;
 
 + (id)currentUser;
 + (BOOL)isLoggedIn;

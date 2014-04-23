@@ -11,6 +11,7 @@
 #import "User.h"
 #import "UINavigationBar+Yab.h"
 #import "NotificationPopupView.h"
+#import "Checkin.h"
 
 @implementation ApplicationController
 
@@ -63,6 +64,7 @@
 }
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.locationsSent = [[NSMutableDictionary alloc] init];
   [self loadStyles];
 }
 
@@ -77,7 +79,6 @@
 }
 
 - (void)setupBeaon {
-//  [self addNotification];
   self.locationManager = [[CLLocationManager alloc] init];
   self.locationManager.delegate = self;
   
@@ -92,9 +93,17 @@
   
   [self.locationManager requestStateForRegion:region];
 }
-- (void)addNotification {
-  NotificationPopupView *notificationPopup = [[NotificationPopupView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+- (void)addNotification:(Checkin *)checkin {
+  NotificationPopupView *notificationPopup = [[NotificationPopupView alloc] initWithCheckin:checkin frame:[[UIScreen mainScreen] bounds]];
   [self.view addSubview:notificationPopup];
+  
+  UILocalNotification *notification = [[UILocalNotification alloc] init];
+//  notification.alertAction = [NSString stringWithFormat:@"Checkin at: %@", checkin.merchant.name];
+  notification.alertBody = [NSString stringWithFormat:@"Checked in at: %@ - %@", checkin.merchant.name, checkin.message];
+  notification.soundName = UILocalNotificationDefaultSoundName;
+  notification.applicationIconBadgeNumber = 1;
+  notification.fireDate = [NSDate date];
+  [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -128,46 +137,27 @@
   }
 }
 
-- (NSString *)stringForProximity:(CLProximity)proximity {
-  switch (proximity) {
-    case CLProximityUnknown:    return @"Unknown";
-    case CLProximityFar:        return @"Far";
-    case CLProximityNear:       return @"Near";
-    case CLProximityImmediate:  return @"Immediate";
-    default:
-      return nil;
-  }
-}
-
-
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
   for (CLBeacon *beacon in beacons) {
-    NSLog(@"Ranging beacon: %@", beacon.proximityUUID);
-    NSLog(@"%@ - %@", beacon.major, beacon.minor);
-    NSLog(@"Range: %@", [self stringForProximity:beacon.proximity]);
+    NSString *majorMinor = [NSString stringWithFormat:@"major:%@minor:%@", beacon.major, beacon.minor];
     
-    [self setColorForProximity:beacon.proximity];
+    if (!self.locationsSent[majorMinor]) {
+      id params = @{ @"checkin":
+                       @{ @"major":beacon.major, @"minor": beacon.minor },
+                     @"authentication_token": [[User currentUser] authenticationToken]
+                  };
+      [[RKObjectManager sharedManager] postObject:params path:@"checkins" parameters:params
+                                          success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                            [self addNotification:[mappingResult firstObject]];
+                                          }
+                                          failure:nil
+       ];
+       [self.locationsSent setObject:@"true" forKey:majorMinor];
+    }
+    
   }
 }
 
-- (void)setColorForProximity:(CLProximity)proximity {
-  switch (proximity) {
-    case CLProximityUnknown:
-      self.view.backgroundColor = [UIColor whiteColor];
-      break;
-    case CLProximityFar:
-      self.view.backgroundColor = [UIColor yellowColor];
-      break;
-    case CLProximityNear:
-      self.view.backgroundColor = [UIColor orangeColor];
-      break;
-    case CLProximityImmediate:
-      self.view.backgroundColor = [UIColor redColor];
-      break;
-    default:
-      break;
-  }
-}
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

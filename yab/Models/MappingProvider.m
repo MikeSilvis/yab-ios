@@ -32,8 +32,10 @@
   RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Merchant class]];
   
   [mapping addAttributeMappingsFromDictionary:@{
-                                                @"name"                 :   @"name",
                                                 @"id"                   :   @"merchantId",
+                                                @"name"                 :   @"name",
+                                                @"avatar_url"           :   @"avatarUrl",
+                                                @"points"               :   @"points",
                                                 }];
   
   return mapping;
@@ -47,6 +49,28 @@
                                                 @"longitude"            :   @"longitude",
                                                 }];
   
+  return mapping;
+}
++ (RKMapping *)checkinStyleMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Checkin class]];
+  
+  [mapping addAttributeMappingsFromDictionary:@{
+                                                @"id"                   :   @"checkinId",
+                                                @"message"              :   @"message",
+                                                @"points"              :    @"points",
+                                                @"next_level_points"    :   @"nextLevelPoints",
+                                                }];
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
+                                                                          toKeyPath:@"user"
+                                                                        withMapping:[MappingProvider userStyleMapping]]];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"merchant"
+                                                                          toKeyPath:@"merchant"
+                                                                        withMapping:[MappingProvider merchantStyleMapping]]];
+  
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"location"
+                                                                          toKeyPath:@"location"
+                                                                        withMapping:[MappingProvider locationStyleMapping]]];
   return mapping;
 }
 
@@ -68,7 +92,7 @@
                                                                                                     method:RKRequestMethodPOST
                                                                                                pathPattern:@"authentication"
                                                                                                    keyPath:@"user"
-                                                                                               statusCodes:[NSIndexSet indexSetWithIndex:200]];
+                                                                                               statusCodes:[NSIndexSet indexSetWithIndex:201]];
   [objectManager addResponseDescriptor:userAuthenticationDescriptor];
 
   RKResponseDescriptor *merchantIndexDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider merchantStyleMapping]
@@ -84,6 +108,14 @@
                                                                                                    keyPath:@"location"
                                                                                                statusCodes:[NSIndexSet indexSetWithIndex:200]];
   [objectManager addResponseDescriptor:locationDescriptor];
+  
+  RKResponseDescriptor *checkinDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider checkinStyleMapping]
+                                                                                          method:RKRequestMethodPOST
+                                                                                     pathPattern:@"checkins"
+                                                                                         keyPath:@"checkin"
+                                                                                     statusCodes:[NSIndexSet indexSetWithIndex:201]];
+
+  [objectManager addResponseDescriptor:checkinDescriptor];
 }
 
 @end

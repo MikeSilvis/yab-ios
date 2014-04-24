@@ -39,7 +39,6 @@
 		11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */; };
 		11F4DA1118FF41620084CE7F /* UIImage+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DA1018FF41620084CE7F /* UIImage+Yab.m */; };
 		11FACDE4190998F500970091 /* MerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FACDE3190998F500970091 /* MerchantViewController.m */; };
-		11FACDE81909B2BA00970091 /* profileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FACDE71909B2BA00970091 /* profileView.m */; };
 		99ABBF06BA7D41A7BBA6104D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C750AF8A9B64BF0A239336C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,8 +107,6 @@
 		11F4DA1018FF41620084CE7F /* UIImage+Yab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Yab.m"; sourceTree = "<group>"; };
 		11FACDE2190998F500970091 /* MerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantViewController.h; sourceTree = "<group>"; };
 		11FACDE3190998F500970091 /* MerchantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantViewController.m; sourceTree = "<group>"; };
-		11FACDE61909B2BA00970091 /* profileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profileView.h; sourceTree = "<group>"; };
-		11FACDE71909B2BA00970091 /* profileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profileView.m; sourceTree = "<group>"; };
 		3C750AF8A9B64BF0A239336C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,7 +215,6 @@
 		117BE0AD18CBDADA006950BB /* Yab */ = {
 			isa = PBXGroup;
 			children = (
-				11FACDE51909B2A200970091 /* Helpers */,
 				113CD88F18FA21AC000779FC /* Views */,
 				1157456518CBE5E100298808 /* UI */,
 				1157456418CBE5DA00298808 /* Models */,
@@ -280,15 +276,6 @@
 				117BE0BD18CBDADA006950BB /* TownViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		11FACDE51909B2A200970091 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				11FACDE61909B2BA00970091 /* profileView.h */,
-				11FACDE71909B2BA00970091 /* profileView.m */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,7 +422,6 @@
 				1157456818CBE95700298808 /* User.m in Sources */,
 				113CD88918F4E504000779FC /* LoadingController.m in Sources */,
 				11FACDE4190998F500970091 /* MerchantViewController.m in Sources */,
-				11FACDE81909B2BA00970091 /* profileView.m in Sources */,
 				1157456E18CC00B900298808 /* MappingProvider.m in Sources */,
 				110DA3911905D4D300CE4957 /* Checkin.m in Sources */,
 				1145BDAD1908464C008AEE99 /* Reward.m in Sources */,

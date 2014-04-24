@@ -14,6 +14,9 @@
 
 @interface ProfileViewController ()
 
+@property (nonatomic, strong) NSURLSessionConfiguration *sessionConfig;
+@property (nonatomic, strong) NSURLSession *session;
+
 @end
 
 @implementation ProfileViewController
@@ -106,6 +109,7 @@
 
   });
   
+
   [self.achievementsBar.items[1] setTitle:self.user.level.name];
   
   UIImage *customTextImage = [[UIImage drawText:[self.user.level.points stringValue]
@@ -134,34 +138,42 @@
   
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    
+    // Add Progress Bar
+    UIProgressView *progressBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, (cell.frame.size.height + 3), cell.frame.size.width, 2)];
+    progressBar = [UIProgressView defaultStyles:progressBar];
+    [progressBar setProgress:merchant.user_level.nextLevelPercent animated:NO];
+    [cell.contentView addSubview:progressBar];
+    
+    // Logo
+    int imageSize = 30;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, (cell.frame.size.height - imageSize) / 2, imageSize, imageSize)];
+    [imageView setImageWithURL:merchant.avatarUrl placeholderImage:[UIImage imageNamed:@"logo"]];
+    [cell.contentView addSubview:imageView];
+    imageView.layer.borderColor = BLACKCOLOR.CGColor;
+    imageView.layer.borderWidth = 2;
+    imageView.layer.masksToBounds = YES;
+    imageView.layer.cornerRadius = (imageSize / 2);
+    imageView.clipsToBounds = YES;
+    
+    // Merchant Name
+    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, (cell.frame.size.height - 30) / 2, (cell.frame.size.width - 50), 30)];
+    textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
+    textLabel.textColor = BLACKCOLOR;
+    textLabel.text = merchant.name;
+    textLabel.highlightedTextColor = WHITECOLOR;
+    [cell.contentView addSubview:textLabel];
+    
+    // Highlight Color
+    UIView *selectedView = [[UIView alloc] init];
+    selectedView.backgroundColor = BLACKCOLOR;
+    cell.selectedBackgroundView = selectedView;
   }
-  
-  cell.textLabel.text = merchant.name;
-  cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
-  cell.textLabel.highlightedTextColor = WHITECOLOR;
-  
-  // Image
-  [cell.imageView setImageWithURL:merchant.avatarUrl placeholderImage:[UIImage imageNamed:@"logo"]];
-  cell.imageView.layer.borderColor = BLACKCOLOR.CGColor;
-  cell.imageView.layer.borderWidth = 2;
-  cell.imageView.layer.masksToBounds = YES;
-  cell.imageView.layer.cornerRadius = 20;
-  cell.imageView.clipsToBounds = YES;
-  
-  UIView *selectedView = [[UIView alloc] init];
-  selectedView.backgroundColor = BLACKCOLOR;
-  cell.selectedBackgroundView = selectedView;
-  
-  // Add Progress Bar
-//  UIProgressView *progressBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, cell.frame.size.height, cell.frame.size.width, 20)];
-//  progressBar = [UIProgressView defaultStyles:progressBar];
-//  [progressBar setProgress:merchant.user_level.nextLevelPercent animated:NO];
-//  [cell.contentView addSubview:progressBar];
   
   return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 40;
+  return 50;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [self performSegueWithIdentifier:@"merchantSegue" sender:self];

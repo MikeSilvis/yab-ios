@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 @implementation UIImage (Yab)
-+(UIImage*) drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point {
++ (UIImage*) drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point {
   
   UIFont *font = [UIFont fontWithName:@"Helvetica-Bold" size:18.0f];
    UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0f);
@@ -28,5 +28,10 @@
   UIGraphicsEndImageContext();
   
   return newImage;
+}
++(UIImage *)profilePhotoImage:(NSURL *)url {
+  UIImage *image = [UIImage imageNamed:@"blankAvatar"];
+  
+  return image;
 }
 @end

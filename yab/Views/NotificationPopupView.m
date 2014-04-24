@@ -7,6 +7,7 @@
 //
 
 #import "NotificationPopupView.h"
+#import "UIProgressView+Yab.h"
 
 @implementation NotificationPopupView
 
@@ -80,9 +81,8 @@
   
   // Progress Bar
   UIProgressView *progressBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 350, self.frame.size.width, 20)];
+  progressBar = [UIProgressView defaultStyles:progressBar];
   [progressBar setProgress:self.checkin.level.nextLevelPercent animated:YES];
-  progressBar.progressTintColor = GREENCOLOR;
-  progressBar.trackTintColor = WHITECOLOR;
   [self addSubview:progressBar];
   
   // Share

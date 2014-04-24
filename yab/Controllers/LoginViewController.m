@@ -16,7 +16,7 @@
   [self addFacebookButton];
 }
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:NO];
   [self loadStyles];
 }

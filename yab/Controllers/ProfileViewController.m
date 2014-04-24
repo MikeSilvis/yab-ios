@@ -9,6 +9,8 @@
 #import "ProfileViewController.h"
 #import "AppDelegate.h"
 #import "UIImage+Yab.h"
+#import "UIProgressView+Yab.h"
+#import "MerchantViewController.h"
 
 @interface ProfileViewController ()
 
@@ -58,34 +60,39 @@
                                                       NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Bold" size:10.0f]
                                                       }
                                            forState:UIControlStateNormal];
+  
+  // Table View
+  self.merchantTable.separatorColor = [UIColor clearColor];
+
+  self.navigationController.navigationBar.tintColor = WHITECOLOR;
+  self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
 }
 - (void)loadImages {
   // Profile Photo
   if (!![self.user.profilePhotoUrl host]) {
-    [self.profilePhotoUrl setImageWithURL:self.user.profilePhotoUrl];
+    [self.profilePhoto setImageWithURL:self.user.profilePhotoUrl];
   } else {
-    [self.profilePhotoUrl setImage:[UIImage imageNamed:@"blankAvatar"]];
+    [self.profilePhoto setImage:[UIImage imageNamed:@"blankAvatar"]];
   }
 
-  self.profilePhotoUrl.layer.borderColor = BLACKCOLOR.CGColor;
-  self.profilePhotoUrl.layer.borderWidth = 3;
-  self.profilePhotoUrl.layer.masksToBounds = YES;
-  self.profilePhotoUrl.layer.cornerRadius = self.profilePhotoUrl.frame.size.height /2;
-  self.profilePhotoUrl.clipsToBounds = YES;
+  self.profilePhoto.layer.borderColor = BLACKCOLOR.CGColor;
+  self.profilePhoto.layer.borderWidth = 3;
+  self.profilePhoto.layer.masksToBounds = YES;
+  self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.size.height /2;
+  self.profilePhoto.clipsToBounds = YES;
 
   // Cover Photo
   if (!![self.user.profilePhotoUrl host]) {
-    [self.coverPhotoUrl setImageWithURL:self.user.coverPhotoUrl];
+    [self.coverPhoto setImageWithURL:self.user.coverPhotoUrl];
   } else {
-    [self.coverPhotoUrl setImage:[UIImage imageNamed:@"coverDefault"]];
+    [self.coverPhoto setImage:[UIImage imageNamed:@"coverDefault"]];
   }
 
-  UIToolbar *blurToolbar = [[UIToolbar alloc] initWithFrame:self.coverPhotoUrl.bounds];
+  UIToolbar *blurToolbar = [[UIToolbar alloc] initWithFrame:self.coverPhoto.bounds];
   blurToolbar.barStyle = UIBarStyleBlackTranslucent;
   blurToolbar.translucent = YES;
   blurToolbar.alpha = 0.5;
-  [self.coverPhotoUrl addSubview:blurToolbar];
-  
+  [self.coverPhoto addSubview:blurToolbar];
 }
 - (void)loadLevel {
   dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
@@ -114,5 +121,57 @@
 
 - (IBAction)settingsGearTouched:(id)sender {
   [self performSegueWithIdentifier:@"settingsModal" sender:self];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [self.user.merchants count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *simpleTableIdentifier = @"merchantTableCell";
+  
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+  Merchant *merchant = self.user.merchants[indexPath.row];
+  
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+  }
+  
+  cell.textLabel.text = merchant.name;
+  cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
+  cell.textLabel.highlightedTextColor = WHITECOLOR;
+  
+  // Image
+  [cell.imageView setImageWithURL:merchant.avatarUrl placeholderImage:[UIImage imageNamed:@"logo"]];
+  cell.imageView.layer.borderColor = BLACKCOLOR.CGColor;
+  cell.imageView.layer.borderWidth = 2;
+  cell.imageView.layer.masksToBounds = YES;
+  cell.imageView.layer.cornerRadius = 20;
+  cell.imageView.clipsToBounds = YES;
+  
+  UIView *selectedView = [[UIView alloc] init];
+  selectedView.backgroundColor = BLACKCOLOR;
+  cell.selectedBackgroundView = selectedView;
+  
+  // Add Progress Bar
+//  UIProgressView *progressBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, cell.frame.size.height, cell.frame.size.width, 20)];
+//  progressBar = [UIProgressView defaultStyles:progressBar];
+//  [progressBar setProgress:merchant.user_level.nextLevelPercent animated:NO];
+//  [cell.contentView addSubview:progressBar];
+  
+  return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return 40;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self performSegueWithIdentifier:@"merchantSegue" sender:self];
+  [self.merchantTable deselectRowAtIndexPath:indexPath animated:YES];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+  if([segue.identifier isEqualToString:@"merchantSegue"]){
+    NSIndexPath *indexPath = [self.merchantTable indexPathForSelectedRow];
+    MerchantViewController *destViewController = segue.destinationViewController;
+    destViewController.merchant = self.user.merchants[indexPath.row];
+  }
 }
 @end

@@ -17,7 +17,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:NO];
-  [self testNotification];
+//  [self testNotification];
   
   if ([User hasLoggedIn]) {
     if (![User isLoggedIn]) {

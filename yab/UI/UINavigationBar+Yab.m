@@ -14,7 +14,6 @@
   navBar.titleTextAttributes = @{
                                  NSForegroundColorAttributeName: [UIColor whiteColor]
   };
-//  navBar.frame = CGRectMake(0, 0, 320, 300);
   return navBar;
 }
 @end

@@ -56,8 +56,12 @@
     @"avatar_url"           :   @"avatarUrl",
   }];
   
-  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"level"
-                                                                          toKeyPath:@"level"
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user_level"
+                                                                          toKeyPath:@"user_level"
+                                                                        withMapping:[MappingProvider levelStyleMapping]]];
+
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"overall_level"
+                                                                          toKeyPath:@"overall_level"
                                                                         withMapping:[MappingProvider levelStyleMapping]]];
   
   [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"rewards"

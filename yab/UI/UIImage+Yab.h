@@ -11,4 +11,5 @@
 
 @interface UIImage (Yab)
 +(UIImage*) drawText:(NSString*)text inImage:(UIImage*)image atPoint:(CGPoint)point;
++(UIImage *)profilePhotoImage:(NSURL *)url;
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface SettingsController : UIViewController <FBLoginViewDelegate>
+@interface SettingsViewController : UIViewController <FBLoginViewDelegate>
 
 @property (nonatomic, assign) BOOL isFirstLoginDone;
 

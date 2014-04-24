@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSArray *rewards;
 @property (nonatomic, copy) NSArray *locations;
 
-@property (nonatomic) Level *level;
+@property (nonatomic) Level *user_level;
+@property (nonatomic) Level *overall_level;
 
 @end

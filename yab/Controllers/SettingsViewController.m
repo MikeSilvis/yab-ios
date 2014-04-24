@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Mike Silvis. All rights reserved.
 //
 
-#import "SettingsController.h"
+#import "SettingsViewController.h"
 #import "AppDelegate.h"
 #import "User.h"
 
-@implementation SettingsController
+@implementation SettingsViewController
 - (void)viewDidLoad {
   self.navigationController.topViewController.title = @"Settings";
   [self loadStyles];

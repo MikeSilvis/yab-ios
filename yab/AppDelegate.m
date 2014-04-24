@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MappingProvider.h"
 
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

@@ -40,6 +40,7 @@
 		11CEA4DC1909DBA9004A15CE /* LevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4DB1909DBA9004A15CE /* LevelView.m */; };
 		11CEA4DF1909F056004A15CE /* DefaultTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4DE1909F056004A15CE /* DefaultTable.m */; };
 		11CEA4E1190A02E7004A15CE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CEA4E0190A02E7004A15CE /* MapKit.framework */; };
+		11CEA4E5190AA2D7004A15CE /* WildcardGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4E4190AA2D7004A15CE /* WildcardGestureRecognizer.m */; };
 		11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */; };
 		11F4DA1118FF41620084CE7F /* UIImage+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DA1018FF41620084CE7F /* UIImage+Yab.m */; };
 		11FACDE4190998F500970091 /* MerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FACDE3190998F500970091 /* MerchantViewController.m */; };
@@ -112,6 +113,8 @@
 		11CEA4DD1909F056004A15CE /* DefaultTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultTable.h; path = Views/DefaultTable.h; sourceTree = "<group>"; };
 		11CEA4DE1909F056004A15CE /* DefaultTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DefaultTable.m; path = Views/DefaultTable.m; sourceTree = "<group>"; };
 		11CEA4E0190A02E7004A15CE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		11CEA4E3190AA2D7004A15CE /* WildcardGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WildcardGestureRecognizer.h; sourceTree = "<group>"; };
+		11CEA4E4190AA2D7004A15CE /* WildcardGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WildcardGestureRecognizer.m; sourceTree = "<group>"; };
 		11D2099B18DF6B6F00A30FD3 /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
 		11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		11F4DA0F18FF41620084CE7F /* UIImage+Yab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Yab.h"; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 		117BE0AD18CBDADA006950BB /* Yab */ = {
 			isa = PBXGroup;
 			children = (
+				11CEA4E2190AA2C4004A15CE /* Helpers */,
 				113CD88F18FA21AC000779FC /* Views */,
 				1157456518CBE5E100298808 /* UI */,
 				1157456418CBE5DA00298808 /* Models */,
@@ -295,6 +299,15 @@
 				117BE0BD18CBDADA006950BB /* TownViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11CEA4E2190AA2C4004A15CE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				11CEA4E3190AA2D7004A15CE /* WildcardGestureRecognizer.h */,
+				11CEA4E4190AA2D7004A15CE /* WildcardGestureRecognizer.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +452,7 @@
 				11CEA4DF1909F056004A15CE /* DefaultTable.m in Sources */,
 				119151A918E142B3006F69E4 /* SettingsViewController.m in Sources */,
 				11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */,
+				11CEA4E5190AA2D7004A15CE /* WildcardGestureRecognizer.m in Sources */,
 				1157456818CBE95700298808 /* User.m in Sources */,
 				113CD88918F4E504000779FC /* LoadingController.m in Sources */,
 				11FACDE4190998F500970091 /* MerchantViewController.m in Sources */,

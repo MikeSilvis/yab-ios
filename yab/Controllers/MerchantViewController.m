@@ -35,7 +35,7 @@
 - (void)loadViews {
   ProfilePhotoView *photoView = [[ProfilePhotoView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 153)];
   photoView.profilePhotoUrl = self.merchant.avatarUrl;
-//  photoView.coverPhotoUrl   = self.merchant.coverPhotoUrl;
+  photoView.merchant = self.merchant;
   [photoView render];
   [self.view addSubview:photoView];
   

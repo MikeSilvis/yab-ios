@@ -8,12 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "Merchant.h"
+#import <MapKit/MapKit.h>
 
-@interface ProfilePhotoView : UIView
+@interface ProfilePhotoView : UIView <MKMapViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, copy) NSURL    *coverPhotoUrl;
 @property (nonatomic, copy) NSURL    *profilePhotoUrl;
 
+@property (nonatomic) Merchant *merchant;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
 - (void)render;
+- (void)renderMap;
+- (void)renderCoverPhoto;
+- (void)openInNative;
 
 @end

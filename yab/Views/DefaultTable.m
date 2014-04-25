@@ -69,7 +69,6 @@
     if ([self.objects[indexPath.row] isKindOfClass:[Reward class]]) {
       int iconSize = (cell.frame.size.height / 2);
       UIView *badgeIcon = [[UIView alloc] initWithFrame:CGRectMake(0, (cell.frame.size.height - iconSize) / 2, iconSize, iconSize)];
-//      CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
       badgeIcon.backgroundColor = BLACKCOLOR;
       badgeIcon.layer.cornerRadius = iconSize / 2;
       self.badgeIconText = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, iconSize, iconSize)];
@@ -87,29 +86,30 @@
     self.progressBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, (cell.frame.size.height + 4), cell.frame.size.width, 2)];
     self.progressBar = [UIProgressView defaultStyles:self.progressBar];
     [cell.contentView addSubview:self.progressBar];
-  }
-  
-  // If Merchant
-  if ([self.objects[indexPath.row] isKindOfClass:[Merchant class]]) {
-    Merchant *object = self.objects[indexPath.row];
-    [self.progressBar setProgress:object.user_level.nextLevelPercent animated:NO];
     
-    if (!![object.avatarUrl host]) {
-      [self.logoImageView setImageWithURL:object.avatarUrl
-                         placeholderImage: [UIImage imageNamed:@"logo"]];
+    // All the setters
+    // If Merchant
+    if ([self.objects[indexPath.row] isKindOfClass:[Merchant class]]) {
+      Merchant *object = self.objects[indexPath.row];
+      [self.progressBar setProgress:object.user_level.nextLevelPercent animated:NO];
+      
+      if (!![object.avatarUrl host]) {
+        [self.logoImageView setImageWithURL:object.avatarUrl
+                           placeholderImage: [UIImage imageNamed:@"logo"]];
+      }
+      
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+      self.merchantNameLabel.text = object.name;
+    } else {
+      Reward *object = self.objects[indexPath.row];
+      [self.progressBar setProgress:(self.merchantPoints / [object.points floatValue]) animated:NO];
+      if (!![object.avatarUrl host]) {
+        [self.logoImageView setImageWithURL:object.avatarUrl
+                           placeholderImage: [UIImage imageNamed:@"logo"]];
+      }
+      self.merchantNameLabel.text = object.name;
+      self.badgeIconText.text = [object.points stringValue];
     }
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    self.merchantNameLabel.text = object.name;
-  } else {
-    Reward *object = self.objects[indexPath.row];
-    [self.progressBar setProgress:(self.merchantPoints / [object.points floatValue]) animated:NO];
-    if (!![object.avatarUrl host]) {
-      [self.logoImageView setImageWithURL:object.avatarUrl
-                         placeholderImage: [UIImage imageNamed:@"logo"]];
-    }
-    self.merchantNameLabel.text = object.name;
-    self.badgeIconText.text = [object.points stringValue];
   }
   
   return cell;

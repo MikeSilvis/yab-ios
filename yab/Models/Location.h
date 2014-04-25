@@ -11,5 +11,10 @@
 @interface Location : NSObject
 
 @property (nonatomic, copy) NSNumber *locationtId;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *street;
+
+@property (nonatomic, copy) NSNumber *longitude;
+@property (nonatomic, copy) NSNumber *latitude;
 
 @end

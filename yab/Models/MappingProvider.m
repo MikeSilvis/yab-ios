@@ -80,6 +80,10 @@
   
   [mapping addAttributeMappingsFromDictionary:@{
     @"id"                   :   @"locationtId",
+    @"latitude"             :   @"latitude",
+    @"longitude"            :   @"longitude",
+    @"message"              :   @"message",
+    @"street"               :   @"street",
   }];
   
   return mapping;

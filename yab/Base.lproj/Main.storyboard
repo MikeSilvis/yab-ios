@@ -47,24 +47,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-3A-FMX">
-                                <rect key="frame" x="0.0" y="-55" width="320" height="250"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-op-uuM">
-                                <rect key="frame" x="110" y="20" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7O0-kl-XB1">
-                                <rect key="frame" x="0.0" y="153" width="320" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Yabs" image="yabs" id="Cay-31-0W1"/>
-                                    <tabBarItem title="Town Hero" image="yabs" id="6Lu-gh-jb7"/>
-                                </items>
-                                <color key="barTintColor" red="0.231372565" green="0.23921570180000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
-                            </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qYt-7p-qP1">
                                 <rect key="frame" x="0.0" y="202" width="320" height="253"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,10 +70,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="achievementsBar" destination="7O0-kl-XB1" id="nbD-Ab-xeM"/>
-                        <outlet property="coverPhoto" destination="DZ4-3A-FMX" id="eWA-2o-V9P"/>
                         <outlet property="merchantTable" destination="qYt-7p-qP1" id="BHc-dB-c8x"/>
-                        <outlet property="profilePhoto" destination="Zz6-op-uuM" id="Vc5-gi-mhC"/>
                         <outlet property="settingsGear" destination="Yaf-Wq-ZVe" id="5mC-gs-lKI"/>
                         <segue destination="o01-Ei-pIy" kind="push" identifier="settingsModal" id="89U-TG-1To"/>
                         <segue destination="nht-3s-tVo" kind="modal" identifier="loginSegue" animates="NO" id="i9v-Aw-L9S"/>
@@ -106,51 +85,7 @@
         <scene sceneID="L7q-ho-qMn">
             <objects>
                 <viewController id="9rL-G0-vQh" customClass="MerchantViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="84K-jk-eul"/>
-                        <viewControllerLayoutGuide type="bottom" id="d59-64-TuA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mwb-Ho-aN0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uyh-sZ-Nbg">
-                                <rect key="frame" x="0.0" y="-55" width="320" height="250"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OIc-Fa-pEE">
-                                <rect key="frame" x="110" y="20" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tF-0R-QFi">
-                                <rect key="frame" x="0.0" y="148" width="320" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Yabs" image="yabs" id="M59-Zb-Hv6"/>
-                                    <tabBarItem title="Town Hero" image="yabs" id="pXb-XE-eya"/>
-                                </items>
-                                <color key="barTintColor" red="0.231372565" green="0.23921570180000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
-                            </tabBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cs0-My-Hea">
-                                <rect key="frame" x="0.0" y="197" width="320" height="258"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="QUy-BD-bpt" id="ovM-0w-ddG"/>
-                                    <outlet property="delegate" destination="QUy-BD-bpt" id="CYz-rB-TCq"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
                     <navigationItem key="navigationItem" id="Dlt-yc-d6L"/>
-                    <connections>
-                        <outlet property="achievementsBar" destination="0tF-0R-QFi" id="vdy-Vx-WTe"/>
-                        <outlet property="coverPhoto" destination="Uyh-sZ-Nbg" id="To0-pg-ykt"/>
-                        <outlet property="profilePhoto" destination="OIc-Fa-pEE" id="ptC-dV-8w3"/>
-                        <outlet property="userTable" destination="cs0-My-Hea" id="qDB-Xx-N8M"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lZ-eX-eg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -304,7 +239,6 @@
         <image name="coktail" width="22" height="27"/>
         <image name="intro" width="200" height="135"/>
         <image name="loginBg" width="320" height="480"/>
-        <image name="yabs" width="160" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

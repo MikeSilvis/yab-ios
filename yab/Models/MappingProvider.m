@@ -19,7 +19,7 @@
     @"phone_number"         :   @"phoneNumber",
     @"authentication_token" :   @"authenticationToken",
     @"facebook_id"          :   @"facebookId",
-    @"profile_photo_url"    :   @"profilePhotoUrl",
+    @"avatar_url"           :   @"avatarUrl",
     @"cover_photo_url"      :   @"coverPhotoUrl"
   }];
   
@@ -54,6 +54,7 @@
     @"id"                   :   @"merchantId",
     @"name"                 :   @"name",
     @"avatar_url"           :   @"avatarUrl",
+    @"cover_photo_url"      :   @"coverPhotoUrl"
   }];
   
   [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user_level"

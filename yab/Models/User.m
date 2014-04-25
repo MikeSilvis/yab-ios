@@ -33,7 +33,7 @@
   currentUser.userId              = self.userId;
   currentUser.authenticationToken = self.authenticationToken;
   currentUser.phoneNumber         = self.phoneNumber;
-  currentUser.profilePhotoUrl     = self.profilePhotoUrl;
+  currentUser.avatarUrl           = self.avatarUrl;
   currentUser.coverPhotoUrl       = self.coverPhotoUrl;
   currentUser.level               = self.level;
   currentUser.merchants           = self.merchants;

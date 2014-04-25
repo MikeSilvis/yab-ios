@@ -36,6 +36,9 @@
 		119151AF18E286E7006F69E4 /* Merchant.m in Sources */ = {isa = PBXBuildFile; fileRef = 119151AE18E286E7006F69E4 /* Merchant.m */; };
 		11954BF518E51AFE00D81D03 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 11954BF418E51AFE00D81D03 /* Location.m */; };
 		11BE1D3918CBDEEA00F9D62E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */; };
+		11CEA4D91909CD72004A15CE /* ProfilePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4D81909CD72004A15CE /* ProfilePhotoView.m */; };
+		11CEA4DC1909DBA9004A15CE /* LevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4DB1909DBA9004A15CE /* LevelView.m */; };
+		11CEA4DF1909F056004A15CE /* DefaultTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4DE1909F056004A15CE /* DefaultTable.m */; };
 		11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */; };
 		11F4DA1118FF41620084CE7F /* UIImage+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DA1018FF41620084CE7F /* UIImage+Yab.m */; };
 		11FACDE4190998F500970091 /* MerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FACDE3190998F500970091 /* MerchantViewController.m */; };
@@ -101,6 +104,12 @@
 		11954BF418E51AFE00D81D03 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		11BE1D3718CBDEEA00F9D62E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		11BE1D3818CBDEEA00F9D62E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		11CEA4D71909CD72004A15CE /* ProfilePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfilePhotoView.h; path = Views/ProfilePhotoView.h; sourceTree = "<group>"; };
+		11CEA4D81909CD72004A15CE /* ProfilePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfilePhotoView.m; path = Views/ProfilePhotoView.m; sourceTree = "<group>"; };
+		11CEA4DA1909DBA9004A15CE /* LevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelView.h; path = Views/LevelView.h; sourceTree = "<group>"; };
+		11CEA4DB1909DBA9004A15CE /* LevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelView.m; path = Views/LevelView.m; sourceTree = "<group>"; };
+		11CEA4DD1909F056004A15CE /* DefaultTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultTable.h; path = Views/DefaultTable.h; sourceTree = "<group>"; };
+		11CEA4DE1909F056004A15CE /* DefaultTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DefaultTable.m; path = Views/DefaultTable.m; sourceTree = "<group>"; };
 		11D2099B18DF6B6F00A30FD3 /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
 		11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		11F4DA0F18FF41620084CE7F /* UIImage+Yab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Yab.h"; sourceTree = "<group>"; };
@@ -141,6 +150,12 @@
 			children = (
 				113CD88C18FA21A5000779FC /* NotificationPopupView.h */,
 				113CD88D18FA21A5000779FC /* NotificationPopupView.m */,
+				11CEA4D71909CD72004A15CE /* ProfilePhotoView.h */,
+				11CEA4D81909CD72004A15CE /* ProfilePhotoView.m */,
+				11CEA4DA1909DBA9004A15CE /* LevelView.h */,
+				11CEA4DB1909DBA9004A15CE /* LevelView.m */,
+				11CEA4DD1909F056004A15CE /* DefaultTable.h */,
+				11CEA4DE1909F056004A15CE /* DefaultTable.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -417,6 +432,7 @@
 				113CD88E18FA21A5000779FC /* NotificationPopupView.m in Sources */,
 				117BE0C118CBDADA006950BB /* ProfileViewController.m in Sources */,
 				117BE0B818CBDADA006950BB /* AppDelegate.m in Sources */,
+				11CEA4DF1909F056004A15CE /* DefaultTable.m in Sources */,
 				119151A918E142B3006F69E4 /* SettingsViewController.m in Sources */,
 				11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */,
 				1157456818CBE95700298808 /* User.m in Sources */,
@@ -429,8 +445,10 @@
 				117BE0BE18CBDADA006950BB /* TownViewController.m in Sources */,
 				1145BDB0190984FD008AEE99 /* UIProgressView+Yab.m in Sources */,
 				1145BDAA19080C12008AEE99 /* Level.m in Sources */,
+				11CEA4D91909CD72004A15CE /* ProfilePhotoView.m in Sources */,
 				1121957718DFD38F00D7887E /* UINavigationBar+Yab.m in Sources */,
 				117BE0B418CBDADA006950BB /* main.m in Sources */,
+				11CEA4DC1909DBA9004A15CE /* LevelView.m in Sources */,
 				11954BF518E51AFE00D81D03 /* Location.m in Sources */,
 				11BE1D3918CBDEEA00F9D62E /* LoginViewController.m in Sources */,
 			);

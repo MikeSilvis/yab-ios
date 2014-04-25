@@ -14,8 +14,6 @@
 
 @property (nonatomic) Merchant* merchant;
 @property (weak, nonatomic) IBOutlet UITableView *userTable;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePhoto;
-@property (weak, nonatomic) IBOutlet UIImageView *coverPhoto;
 @property (weak, nonatomic) IBOutlet UITabBar *achievementsBar;
 
 @end

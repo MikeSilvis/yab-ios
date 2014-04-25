@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *authenticationToken;
 @property (nonatomic, copy) NSString *facebookId;
 
-@property (nonatomic, copy) NSURL    *profilePhotoUrl;
+@property (nonatomic, copy) NSURL    *avatarUrl;
 @property (nonatomic, copy) NSURL    *coverPhotoUrl;
 
 @property (nonatomic) Level* level;

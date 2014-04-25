@@ -8,9 +8,10 @@
 
 #import "ProfileViewController.h"
 #import "AppDelegate.h"
-#import "UIImage+Yab.h"
 #import "UIProgressView+Yab.h"
 #import "MerchantViewController.h"
+#import "ProfilePhotoView.h"
+#import "LevelView.h"
 
 @interface ProfileViewController ()
 
@@ -24,13 +25,13 @@
 - (void)viewDidLoad {
     self.navigationController.topViewController.title = @"Me";
     [self loadImages];
+    [self loadLevel];
     [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     [self loadStyles];
-    [self loadLevel];
 }
 
 - (User *)user {
@@ -54,73 +55,28 @@
                                                                   NSForegroundColorAttributeName: WHITECOLOR
                                                                   };
   
-  // Achievements Bar
-  self.achievementsBar.backgroundColor = BLACKCOLOR;
-  self.achievementsBar.translucent = NO;
-  [[UITabBar appearance] setSelectedImageTintColor:WHITECOLOR];
-  [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                      NSForegroundColorAttributeName: WHITECOLOR,
-                                                      NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Bold" size:10.0f]
-                                                      }
-                                           forState:UIControlStateNormal];
-  
   // Table View
   self.merchantTable.separatorColor = [UIColor clearColor];
 
   self.navigationController.navigationBar.tintColor = WHITECOLOR;
   self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
 }
+
 - (void)loadImages {
-  // Profile Photo
-  if (!![self.user.profilePhotoUrl host]) {
-    [self.profilePhoto setImageWithURL:self.user.profilePhotoUrl];
-  } else {
-    [self.profilePhoto setImage:[UIImage imageNamed:@"blankAvatar"]];
-  }
-
-  self.profilePhoto.layer.borderColor = BLACKCOLOR.CGColor;
-  self.profilePhoto.layer.borderWidth = 3;
-  self.profilePhoto.layer.masksToBounds = YES;
-  self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.size.height /2;
-  self.profilePhoto.clipsToBounds = YES;
-
-  // Cover Photo
-  if (!![self.user.profilePhotoUrl host]) {
-    [self.coverPhoto setImageWithURL:self.user.coverPhotoUrl];
-  } else {
-    [self.coverPhoto setImage:[UIImage imageNamed:@"coverDefault"]];
-  }
-
-  UIToolbar *blurToolbar = [[UIToolbar alloc] initWithFrame:self.coverPhoto.bounds];
-  blurToolbar.barStyle = UIBarStyleBlackTranslucent;
-  blurToolbar.translucent = YES;
-  blurToolbar.alpha = 0.5;
-  [self.coverPhoto addSubview:blurToolbar];
+  ProfilePhotoView *photoView = [[ProfilePhotoView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 153)];
+  photoView.profilePhotoUrl = self.user.avatarUrl;
+  photoView.coverPhotoUrl   = self.user.coverPhotoUrl;
+  [photoView render];
+  [self.view addSubview:photoView];
 }
+
 - (void)loadLevel {
-  dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-    UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:self.user.level.iconUrl] scale:[[UIScreen mainScreen] scale]];
-    
-    dispatch_async(dispatch_get_main_queue(), ^(void){
-      [self.achievementsBar.items[1] setFinishedSelectedImage:img
-                                  withFinishedUnselectedImage:img
-       ];
-    });
-
-  });
-  
-
-  [self.achievementsBar.items[1] setTitle:self.user.level.name];
-  
-  UIImage *customTextImage = [[UIImage drawText:[self.user.level.points stringValue]
-                                       inImage:[UIImage imageNamed:@"yabs"]
-                                       atPoint:CGPointMake(0, 0)]
-                              imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-
-  [self.achievementsBar.items[0] setFinishedSelectedImage:customTextImage
-                              withFinishedUnselectedImage:customTextImage
-   ];
-
+  LevelView *levelView = [[LevelView alloc] initWithFrame:CGRectMake(0, 153, self.view.frame.size.width, 50)];
+  levelView.iconUrl = self.user.level.iconUrl;
+  levelView.points  = self.user.level.points;
+  levelView.name    = self.user.level.name;
+  [levelView render];
+  [self.view addSubview:levelView];
 }
 
 - (IBAction)settingsGearTouched:(id)sender {

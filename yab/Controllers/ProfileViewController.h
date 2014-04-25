@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "Merchant.h"
 #import <FontAwesomeKit/FAKFontAwesome.h>
 
-@interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ProfileViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet User *user;
+@property (strong, nonatomic) IBOutlet Merchant *merchantToPush;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsGear;
 
 - (IBAction)settingsGearTouched:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UITabBar *achievementsBar;
-@property (weak, nonatomic) IBOutlet UITableView *merchantTable;
 
 @end

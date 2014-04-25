@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *points;
+@property (nonatomic, copy) NSURL    *avatarUrl;
 
 @end

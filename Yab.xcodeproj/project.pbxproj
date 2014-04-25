@@ -39,6 +39,7 @@
 		11CEA4D91909CD72004A15CE /* ProfilePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4D81909CD72004A15CE /* ProfilePhotoView.m */; };
 		11CEA4DC1909DBA9004A15CE /* LevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4DB1909DBA9004A15CE /* LevelView.m */; };
 		11CEA4DF1909F056004A15CE /* DefaultTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA4DE1909F056004A15CE /* DefaultTable.m */; };
+		11CEA4E1190A02E7004A15CE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CEA4E0190A02E7004A15CE /* MapKit.framework */; };
 		11D2099D18DF6B6F00A30FD3 /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */; };
 		11F4DA1118FF41620084CE7F /* UIImage+Yab.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DA1018FF41620084CE7F /* UIImage+Yab.m */; };
 		11FACDE4190998F500970091 /* MerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FACDE3190998F500970091 /* MerchantViewController.m */; };
@@ -110,6 +111,7 @@
 		11CEA4DB1909DBA9004A15CE /* LevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelView.m; path = Views/LevelView.m; sourceTree = "<group>"; };
 		11CEA4DD1909F056004A15CE /* DefaultTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultTable.h; path = Views/DefaultTable.h; sourceTree = "<group>"; };
 		11CEA4DE1909F056004A15CE /* DefaultTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DefaultTable.m; path = Views/DefaultTable.m; sourceTree = "<group>"; };
+		11CEA4E0190A02E7004A15CE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		11D2099B18DF6B6F00A30FD3 /* ApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
 		11D2099C18DF6B6F00A30FD3 /* ApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
 		11F4DA0F18FF41620084CE7F /* UIImage+Yab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Yab.h"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CEA4E1190A02E7004A15CE /* MapKit.framework in Frameworks */,
 				113CD88B18F9C5E1000779FC /* CoreLocation.framework in Frameworks */,
 				117BE0AA18CBDADA006950BB /* CoreGraphics.framework in Frameworks */,
 				117BE0AC18CBDADA006950BB /* UIKit.framework in Frameworks */,
@@ -217,6 +220,7 @@
 		117BE0A618CBDADA006950BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11CEA4E0190A02E7004A15CE /* MapKit.framework */,
 				113CD88A18F9C5E0000779FC /* CoreLocation.framework */,
 				117BE0A718CBDADA006950BB /* Foundation.framework */,
 				117BE0A918CBDADA006950BB /* CoreGraphics.framework */,

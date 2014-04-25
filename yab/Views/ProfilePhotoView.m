@@ -27,12 +27,13 @@
   }
   coverPhoto.contentMode = UIViewContentModeScaleAspectFill;
   coverPhoto.clipsToBounds = YES;
+  [self addSubview:coverPhoto];
+
   UIToolbar *blurToolbar = [[UIToolbar alloc] initWithFrame:coverPhoto.bounds];
   blurToolbar.barStyle = UIBarStyleBlackTranslucent;
   blurToolbar.translucent = YES;
   blurToolbar.alpha = 0.5;
   [coverPhoto addSubview:blurToolbar];
-  [self addSubview:coverPhoto];
   
   // Profile Photo
   int imageSize = 100;

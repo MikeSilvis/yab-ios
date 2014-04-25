@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Merchant.h"
 #import "AppDelegate.h"
+#import "User.h"
 
 @interface MerchantViewController : UIViewController
 
 @property (nonatomic) Merchant* merchant;
+@property (nonatomic) User* userToPush;
 @property (weak, nonatomic) IBOutlet UITableView *userTable;
 @property (weak, nonatomic) IBOutlet UITabBar *achievementsBar;
 

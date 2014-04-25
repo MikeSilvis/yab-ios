@@ -44,19 +44,8 @@
                         <viewControllerLayoutGuide type="bottom" id="JPn-95-d81"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qYt-7p-qP1">
-                                <rect key="frame" x="0.0" y="202" width="320" height="253"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="QUy-BD-bpt" id="mwV-JP-FYP"/>
-                                    <outlet property="delegate" destination="QUy-BD-bpt" id="nEA-KM-boE"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="avatar" id="Z7h-1E-pvt"/>
@@ -70,7 +59,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="merchantTable" destination="qYt-7p-qP1" id="BHc-dB-c8x"/>
                         <outlet property="settingsGear" destination="Yaf-Wq-ZVe" id="5mC-gs-lKI"/>
                         <segue destination="o01-Ei-pIy" kind="push" identifier="settingsModal" id="89U-TG-1To"/>
                         <segue destination="nht-3s-tVo" kind="modal" identifier="loginSegue" animates="NO" id="i9v-Aw-L9S"/>
@@ -86,6 +74,9 @@
             <objects>
                 <viewController id="9rL-G0-vQh" customClass="MerchantViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Dlt-yc-d6L"/>
+                    <connections>
+                        <segue destination="QUy-BD-bpt" kind="push" identifier="userSegue" id="GOt-Qz-b9j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lZ-eX-eg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,10 +91,11 @@
                         <viewControllerLayoutGuide type="bottom" id="AWu-KF-nED"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5L5-Gj-D0v">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="msD-eb-pjB"/>
                     <connections>
                         <segue destination="nht-3s-tVo" kind="modal" identifier="loginSegue" id="zYz-yN-UqI"/>
                     </connections>
@@ -247,5 +239,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="i9v-Aw-L9S"/>
+        <segue reference="GOt-Qz-b9j"/>
     </inferredMetricsTieBreakers>
 </document>
